@@ -13,11 +13,11 @@ O projeto será implementado na disciplina pelos alunos.
 
 * Detalhamento de casos de uso 
 
-  1. [Informações do evento](.docs/casos_de_uso/ucd_cadastrainformacoesdoevento.md)
+  1. [Informações do evento](./docs/casos_de_uso/ucd_cadastrainformacoesdoevento.md)
  
-  2. [Faz inscrição](.docs/casos_de_uso/ucd_fazinscricao.md)
+  2. [Faz inscrição](./docs/casos_de_uso/ucd_fazinscricao.md)
 
-  3. [Libera certificados](.docs/casos_de_uso/ucd_liberacertificados.md)
+  3. [Libera certificados](./docs/casos_de_uso/ucd_liberacertificados.md)
 
 * [Diagrama de classes](./diagramas/classdiagram.PNG)
 
