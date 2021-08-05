@@ -34,4 +34,4 @@ O sistema irá enviar os certificados por e-mail para os inscritos.
 	
 ### 6. Prototipos de Interface
 
-`A ser desenvolvido pelo aluno.`
+`A ser desenvolvido pela equipe.`
