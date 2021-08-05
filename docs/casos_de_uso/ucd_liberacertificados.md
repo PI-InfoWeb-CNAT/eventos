@@ -32,6 +32,6 @@ O sistema irá enviar os certificados por e-mail para os inscritos.
 ||2. O sistema irá calcular o tempo de evento de cada inscrito e enviará o arquivo PDF do certificado por e-mail para os alunos que fizeram check-in|
 
 	
-### 6. Prototipos de Interface
+### 6. Protótipos
 
 `A ser desenvolvido pela equipe.`
