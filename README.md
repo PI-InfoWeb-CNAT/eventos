@@ -1,21 +1,6 @@
 # Sistema de controle de Eventos 1.0
 
 
-Documento de visão /docs/visao_do_produto.md
-
-Documento de Requisitos
-
-Detalhamento de casos de uso
-
-Diagrama de casos de uso
-
-Documentação da arquitetura
-
-
-
-# Sistema de controle de Eventos 1.0
-
-
 Este projeto tem como objetivo ser uma aplicação modelo para a disicplina projeto integrador.
 
 O projeto será implementado na disciplina pelos alunos.
