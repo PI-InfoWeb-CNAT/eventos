@@ -34,4 +34,4 @@ Exibir as informações na página.
 	
 ### 6. Protótipos
 
-`A ser desenvolvido pela equipe.`
+`Serão desenvolvidos pela equipe.`
