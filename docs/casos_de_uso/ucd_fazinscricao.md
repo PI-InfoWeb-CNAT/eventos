@@ -32,6 +32,6 @@ Gerar um número de inscrição e, após o evento, certificado.
 ||2. O sistema gera um número de inscrição|
 
 	
-### 6. Prototipos de Interface
+### 6. Protótipos
 
 `A ser desenvolvido pela equipe.`
