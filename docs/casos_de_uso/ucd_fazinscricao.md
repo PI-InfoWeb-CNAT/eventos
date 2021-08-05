@@ -34,4 +34,4 @@ Gerar um número de inscrição e, após o evento, certificado.
 	
 ### 6. Prototipos de Interface
 
-`A ser desenvolvido pelo aluno.`
+`A ser desenvolvido pela equipe.`
