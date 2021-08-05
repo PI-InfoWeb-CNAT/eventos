@@ -32,6 +32,6 @@ Exibir as informações na página.
 ||2. O sistema exibe as informações na página principal do evento|
 
 	
-### 6. Prototipos de Interface
+### 6. Protótipos
 
 `A ser desenvolvido pela equipe.`
