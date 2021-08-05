@@ -34,4 +34,4 @@ O sistema irá enviar os certificados por e-mail para os inscritos.
 	
 ### 6. Protótipos
 
-`A ser desenvolvido pela equipe.`
+`Serão desenvolvidos pela equipe.`
