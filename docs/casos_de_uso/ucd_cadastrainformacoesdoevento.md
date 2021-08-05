@@ -34,4 +34,4 @@ Exibir as informações na página.
 	
 ### 6. Prototipos de Interface
 
-`A ser desenvolvido pelo aluno.`
+`A ser desenvolvido pela equipe.`
