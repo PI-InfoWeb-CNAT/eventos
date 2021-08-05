@@ -34,4 +34,4 @@ Gerar um número de inscrição e, após o evento, certificado.
 	
 ### 6. Protótipos
 
-`A ser desenvolvido pela equipe.`
+`Serão desenvolvidos pela equipe.`
