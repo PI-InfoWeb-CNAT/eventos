@@ -1,7 +1,6 @@
-# Sistema de controle de Eventos 1.0
+# W-Dev
 
-
-Este projeto tem como objetivo ser uma aplicação modelo para a disicplina projeto integrador.
+Este projeto tem como objetivo ser uma aplicação modelo para a disicplina projeto integrador com o objetivo de falicitar a administração do W-Tads e W-Info.
 
 O projeto será implementado na disciplina pelos alunos.
 
