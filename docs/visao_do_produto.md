@@ -3,17 +3,17 @@
 
 ### 1. Objetivo do Projeto 
 
-O projeto tem como objetivo controlar eventos com inscrições, programação e outros.
+O projeto tem como objetivo controlar as incrições, a programação e os certificados do W-Tads e W-Info.
  
 
 ### 2. Descrição do problema 
 
 |         __        | __   |
 |:------------------|:-----|
-| **_O problema_**    | a falta de uma plataforma simples para controlar eventos, permitindo inscrição, controle de sessões  |
-| **_afetando_**      | pessoas que organizam eventos                      |
+| **_O problema_**    | a falta de uma plataforma simples para controlar o W-Tads e W-Info, permitindo inscrição e emissão de certificados.  |
+| **_afetando_**      | alunos e professores* que participam do evento|
 | **_cujo impacto é_**| falta de organização sistemática para controle de evento                                    |
-| **_uma boa solução seria_** | desenvolvimento de um sistema que permite organizar de forma simples e fácil um evento |
+| **_uma boa solução seria_** | desenvolvimento de um sistema que permite organizar de forma simples e fácil o W-Tads e W-Info |
 
 
 ### 3. Descrição dos usuários
@@ -22,7 +22,7 @@ O projeto tem como objetivo controlar eventos com inscrições, programação e 
 |:---  |:--- |:--- |
 | Inscritos  | Pessoas que irão participar do evento como ouvintes e irão receber certificado de participação |
 | Palestrante  | Pessoas que irão participar do evento como palestrantese irão receber certificado |
-| Organizadores | Administram o sistema | Irão cadastrar as sessões, horários e palestrantes e sessões |
+| Organizadores | Administram o sistema | Irão cadastrar as sessões, horários e palestrantes |
 
 
 
