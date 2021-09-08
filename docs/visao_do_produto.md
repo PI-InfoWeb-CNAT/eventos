@@ -41,12 +41,16 @@ turno, deve receber o certificado com o total de horas o qual faz jus o acompanh
 ### 5.	Alternativas concorrentes
 https://plataforma.even3.com.br
 Pontos positivos: intuitivo,  aba de transmissão online e aba de programação. Pontos negativos: abas demais, e design não atrativo.
+
 https://evnts.com.br
 Pontos positivos: interface atrativa, análise de dados dos eventos. Pontos negativos: Poucas informações sobre a criação dos eventos
+
 https://sympla.com.br
 Enviar material antecipadamente para os integrantes do evento, capacidade de modificar e filtrar a inscrição de um usuário. Porém há muita informação na tela.
+
 https://www.eventbrite.com.br
 Apesar de questionável, é possível enviar notificação, realizar de relatório dentro do programa e definição de data, horário e quantidade dos participantes do evento.
+
 https://eventos.nic.ifrn.edu.br
 Pontos positivos: O site intuitivo com interface limpa; Pontos negativos: A tela do site tem muito zoom, os inscritos tem que cadastrar o CPF e não como saber com seria a tela do organizador.
 
