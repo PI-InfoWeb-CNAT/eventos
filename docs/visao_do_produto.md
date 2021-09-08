@@ -49,7 +49,7 @@ https://sympla.com.br
 Enviar material antecipadamente para os integrantes do evento, capacidade de modificar e filtrar a inscrição de um usuário. Porém há muita informação na tela.
 
 https://www.eventbrite.com.br
-Apesar de questionável, é possível enviar notificação, realizar de relatório dentro do programa e definição de data, horário e quantidade dos participantes do evento.
+Pontos positivos: realizar de relatório dentro do programa e definição de data, horário e quantidade dos participantes do evento. Pontos negativos: notificações em excesso.
 
 https://eventos.nic.ifrn.edu.br
 Pontos positivos: O site intuitivo com interface limpa; Pontos negativos: A tela do site tem muito zoom, os inscritos tem que cadastrar o CPF e não como saber com seria a tela do organizador.
