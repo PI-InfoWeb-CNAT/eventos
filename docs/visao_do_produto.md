@@ -40,10 +40,15 @@ turno, deve receber o certificado com o total de horas o qual faz jus o acompanh
 
 ### 5.	Alternativas concorrentes
 https://plataforma.even3.com.br
+
 https://evnts.com.br
+
 https://sympla.com.br
+
 https://www.eventbrite.com.br
+
 https://eventos.nic.ifrn.edu.br
+
 Nas outras alternativas se apresenta uma falta de utilização do espaço de tela e muitas informações solicitas para criar um evento. A ideia do sistema é criar um site simples e eficiente para o evento W-Tads.
 
 ### 6.	Visão geral do produto
