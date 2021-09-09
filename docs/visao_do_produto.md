@@ -40,19 +40,11 @@ turno, deve receber o certificado com o total de horas o qual faz jus o acompanh
 
 ### 5.	Alternativas concorrentes
 https://plataforma.even3.com.br
-Pontos positivos: intuitivo,  aba de transmissão online e aba de programação. Pontos negativos: abas demais, e design não atrativo.
-
 https://evnts.com.br
-Pontos positivos: interface atrativa, análise de dados dos eventos. Pontos negativos: Poucas informações sobre a criação dos eventos
-
 https://sympla.com.br
-Enviar material antecipadamente para os integrantes do evento, capacidade de modificar e filtrar a inscrição de um usuário. Porém há muita informação na tela.
-
 https://www.eventbrite.com.br
-Pontos positivos: realizar de relatório dentro do programa e definição de data, horário e quantidade dos participantes do evento. Pontos negativos: notificações em excesso.
-
 https://eventos.nic.ifrn.edu.br
-Pontos positivos: O site intuitivo com interface limpa; Pontos negativos: A tela do site tem muito zoom, os inscritos tem que cadastrar o CPF e não como saber com seria a tela do organizador.
+Nas outras alternativas se apresenta uma falta de utilização do espaço de tela e muitas informações solicitas para criar um evento. A ideia do sistema é criar um site simples e eficiente para o evento W-Tads.
 
 ### 6.	Visão geral do produto
 Sistema simples com boa usabilidade e acessibilidade, o que também inclui bom acesso pelo celular, responsividade, e bom acesso por usuários com deficiência ou limitações. 
