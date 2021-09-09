@@ -67,11 +67,19 @@ O sistema deve estar habilitado a receber requisições 7 dias por semana, 24 ho
 ### 8. Requisitos funcionais
 | Código | Nome | Descrição |
 |:--- | :--- | :--- |
-|Entrar no sistema | Usuários devem entrar no sistema para poder usar as funcionalidades|
-|Cadastro de Palestrantes | Administrar os palestrantes que se apresentaram no evento|
-|Administração das apresentações | Gerenciar a data, local e hora das apresentações|
-|Inscrição do público | Inscritos se cadastraram no evento|
-|Consulta das apresentações | Usuários serão capazes de ver detalhes das apresentações (data, local e hora)|
-|Emissão de Certificado | o site emitirá para o inscrito um certificado|
+|RF01|Entrar no sistema | Usuários devem entrar no sistema para poder usar as funcionalidades|
+|RF02|Cadastro de Palestrantes | Administrar os palestrantes que se apresentaram no evento|
+|RF03|Administração das apresentações | Gerenciar a data, local e hora das apresentações|
+|RF04|Inscrição do público | Inscritos se cadastraram no evento|
+|RF05|Consulta das apresentações | Usuários serão capazes de ver detalhes das apresentações (data, local e hora)|
+|RF06|Emissão de Certificado | o site emitirá para o inscrito um certificado|
 
 ### 9. Requisitos não funcionais
+| Código | Nome | Descrição | Categoria | Classificação |
+|:--- | :--- | :--- | :--- | :--- | 
+|RF01|Design Responsivo | O site deve se adaptar a qualquer dispositivo seja móvel ou fixo | Usabilidade | Obrigatório|
+|RF02|Criptografia de Dados | Senhas dos usuários devem ser gravadas e criptografadas no banco de dados | Segurança | Obrigatório|
+|RF03|Controle de Acesso | Apenas usuários autenticados podem usar o site, a menos que seja o auto cadastramento no site | Segurança | Obrigatório|
+|RF04|Facilidade de uso | O sistema deve ser fácil e interativo para o usuário | Usabilidade | Obrigatório|
+|RF05|Tempo de resposta | A comunicação entre o servidor e o cliente deve ocorrer em tempo hábil | Performance | Desejável|
+|RF06|Dados do usuário | o usuário será capaz de ver o seus dados, sem poder ver os dos outros | Segurança | Obrigatório|
