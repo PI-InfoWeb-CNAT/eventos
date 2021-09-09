@@ -56,3 +56,22 @@ Pontos positivos: O site intuitivo com interface limpa; Pontos negativos: A tela
 
 ### 6.	Visão geral do produto
 Sistema simples com boa usabilidade e acessibilidade, o que também inclui bom acesso pelo celular, responsividade, e bom acesso por usuários com deficiência ou limitações. 
+
+### 7. Descrição do ambiente dos usuários
+Durante a organização do WTads, é necessário realizar o check-in do público e dos palestrantes para que haja a emissão de certificados, além de disponibilizar para o público os horários em que as apresentações ocorrerão. Em algumas situações, formam-se grandes filas durante o evento para que o check-in seja realizado, o que acaba gerando dificuldades no acesso a certificados que registrem a quantidade de horas efetivamente.
+Dessa forma, a ideia do sistema é permitir que os organizadores cadastrem o evento, detalhando a hora, local e data das apresentações que nele ocorrerão, além de validar o check-in dos usuários e emitir certificados; e que o público, em geral, possa consultar detalhes dos eventos, se inscrever neles e receber certificados com a finalidade de estabelecer um canal de comunicação ágil entre palestrantes, público e organizadores. 
+O sistema deve estar habilitado a receber requisições 7 dias por semana, 24 horas por dia. Os locais para a interação com o sistema são diversos e podem ter variação de qualidade de sinal de internet, o que pode limitar o acesso ao sistema
+
+
+
+### 8. Requisitos funcionais
+| Código | Nome | Descrição |
+|:--- | :--- | :--- |
+|Entrar no sistema | Usuários devem entrar no sistema para poder usar as funcionalidades|
+|Cadastro de Palestrantes | Administrar os palestrantes que se apresentaram no evento|
+|Administração das apresentações | Gerenciar a data, local e hora das apresentações|
+|Inscrição do público | Inscritos se cadastraram no evento|
+|Consulta das apresentações | Usuários serão capazes de ver detalhes das apresentações (data, local e hora)|
+|Emissão de Certificado | o site emitirá para o inscrito um certificado|
+
+### 9. Requisitos não funcionais
