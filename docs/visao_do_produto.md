@@ -72,7 +72,7 @@ O sistema deve estar habilitado a receber requisições 7 dias por semana, 24 ho
 |RF03|Administração das apresentações | Gerenciar a data, local e hora das apresentações|
 |RF04|Inscrição do público | Inscritos se cadastraram no evento|
 |RF05|Consulta das apresentações | Usuários serão capazes de ver detalhes das apresentações (data, local e hora)|
-|RF06|Emissão de Certificado | o site emitirá para o inscrito um certificado|
+|RF06|Emissão de Certificado | O site emitira um certificado para o público e palestrantes|
 
 ### 9. Requisitos não funcionais
 | Código | Nome | Descrição | Categoria | Classificação |
