@@ -65,10 +65,10 @@ O sistema deve estar habilitado a receber requisições 7 dias por semana, 24 ho
 | Código | Nome | Descrição |
 |:--- | :--- | :--- |
 |RF01|Entrar no sistema | Usuários devem entrar no sistema para poder usar as funcionalidades|
-|RF02|Cadastro de Palestrantes | Administrar os palestrantes que se apresentaram no evento|
+|RF02|Controle de Palestrantes | Administrar os palestrantes que se apresentaram no evento|
 |RF03|Administração das apresentações | Gerenciar a data, local e hora das apresentações|
 |RF04|Inscrição do público | Inscritos se cadastraram no evento|
-|RF05|Consulta das apresentações | Usuários serão capazes de ver detalhes das apresentações (data, local e hora)|
+|RF05|Controle de sessões | Administrar as sessões de cada dia e turno do evento|
 |RF06|Emissão de Certificado | O site emitira um certificado para o público e palestrantes|
 
 ### 9. Requisitos não funcionais
