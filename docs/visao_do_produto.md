@@ -70,6 +70,8 @@ O sistema deve estar habilitado a receber requisições 7 dias por semana, 24 ho
 |RF04|Inscrição do público | Inscritos se cadastraram no evento|
 |RF05|Controle de sessões | Administrar as sessões de cada dia e turno do evento|
 |RF06|Emissão de Certificado | O site emitira um certificado para o público e palestrantes|
+|RF07|Realizar Checklist | O administrador irá poder criar e editar uma checklist para o evento|
+|RF08|Realizar Check-in | Os usuarios poderão realizar o check-in ao inserir o código no site|
 
 ### 9. Requisitos não funcionais
 | Código | Nome | Descrição | Categoria | Classificação |
