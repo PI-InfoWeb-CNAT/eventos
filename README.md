@@ -24,4 +24,10 @@ O projeto será implementado na disciplina pelos alunos.
 
 * Documentação da arquitetura (não tem)
 
+* [Mapa do site](https://www.figma.com/file/sKDEP8ReVbQZyWT05sUrTb/Mapa-do-W-Dev)
+
+* [Protótipo](https://www.figma.com/file/1t3qamciY68c3qXzBQCQGW/Untitled)
+
+
+
 
