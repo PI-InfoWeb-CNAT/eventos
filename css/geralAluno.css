@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+body{
+    font-family: 'Antic', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+*{
+    margin: 0px;
+    padding:0px;
+}
+/*---------HEADER-----*/
+img#logowdev{
+    width: 230px;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+    text-align: center;
+}
+
+h1#tituloAba{
+	line-height: 20vh;
+}
+/*~~~~~MENU SUPERIOR~~~~~~~*/
+nav#navSuperior{
+    display: inline;
+}
+img.iconeSuperior{
+    height: 30px;
+}
+ul.menu{
+    list-style:none;
+    float:left;
+}
+
+ul.menu li{
+    position:relative;
+    float:left;
+}
+ul.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+
+ul.menu li a:hover{
+    color:#fff;
+    text-shadow:0px 0px 5px #fff;
+}
+/*=============CERTIFICADO================*/
+div.conteudo_visualizarCertificado{
+	justify-content: center;
+	text-align: center;
+	background-color: #75A2B0;
+	padding: 20px;
+}
+
+.downloadCertificado{
+    background-color: #BED9E4;
+    padding: 12px;
+    font-size: 20px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Antic', sans-serif;
+}
+/*==============PAGINA INICIAL ALUNO================*/
+/*~~~~PROGRAMAÇÃO*/
+div#conteudo{
+    text-align: center;
+    margin-top: 10px;
+}
+div.containerTurno{
+    background-color: #75A2B0;
+    width: 60vw;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 10px;
+
+}
+/*~~~~TABELAS~~~~~*/
+table{
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+table tr{
+    background-color: #CCCCCC;
+    border-bottom: 3px solid #75A2B0;
+}
+table th{
+    text-align: left;
+    padding: 5px;
+}
+table td{
+    font-size: 20px;
+    padding: 5px;
+}
+/* Set border-radius on the top-left and bottom-left of the first table data on the table row*/
+td:first-child,
+th:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+/* Set border-radius on the top-right and bottom-right of the last table data on the table row*/
+td:last-child,
+th:last-child {
+  border-radius: 0 15px 15px 0;
+}
+
+/*~~~~~~BOTÃO~~~~~*/
+button.paginicialAluno {
+    background-color: #BED9E4;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0;
+}
+/*~~~~FOOTER~~~~*/
+footer.paginicialAluno{
+    background-color: #75A2B0;
+    padding: 10px;
+    text-align: center;
+}
+
+/*=========================EDITAR PERFIL==============================*/
+header.editarPerfil{
+    background-color: #75A2B0;
+}
+div.conteudoEditarPerfil{
+	text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+img.editarPerfil{
+	height: 100px;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+form.editarPerfil{
+	text-align: center;
+}
+
+input.requisitoEditarPerfil{
+	background-color: #DBDBDB;
+	border-radius: 30px;
+	font-size: 24px;
+	padding: 5px;
+	color: #000000;
+	border: none;
+	margin-bottom: 10px;
+	width:55vw;
+	height: 8vh;
+	font-family: 'Antic', sans-serif;
+}
+
+button.editarPerfil {
+	background-color: #9ac7d6;
+	font-size: 24px;
+	border-radius: 30px;
+	border: none;
+	font-family: 'Antic';
+	padding: 10px;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+ }
