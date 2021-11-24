@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adicionar palestrante</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="individualOrganizador.css">
+	<link rel='stylesheet' type="text/css" href="geralOrganizador.css"/>
+</head>
+<body>
+	<!--MENU SUPERIOR-->
+	<nav id="navSuperior" >
+		<ul class="menu">
+		  <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="icone-perfil.png" id="usuario"></a></li>
+		  <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="configuracoes.png" id="configuracao"></a>
+			<ul>
+				<li><a href="#">Configurações:</a></li>
+				<li><a href="#">Eventos Anteriores</a></li>
+			</ul>
+		  </li>
+		  <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="sair.png" id="saida"></a></li>
+		</ul>
+	</nav>    
+
+	<!--MENU LATERAL-->
+	<nav id="navLateral">
+		<div id="logo">
+			<img id="logo" src="Wdev_Logo.png">
+		</div>
+		<ul id="menuLateral">
+			<li><a class="menuLateral" href="checklist.html">Checklist</a></li>
+			<li><a class="menuLateral" href="gerenciarCertificados.html">Certificados</a></li>
+			<li><a class="menuLateral" href="inscritos.html">Inscritos</a></li>
+			<li><a a id="aDestaque" class="menuLateral" href="gerenciarPalestrantes.html">Palestrantes</a></li>
+			<li><a class="menuLateral" href="inicorganizador.html">Programação</a></li>
+			<li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>
+		</ul>
+	</nav>
+	
+	<section id="conteudo">
+		<p> </p><br/>
+
+		<h1>Adicionar palestrante</h1>
+		<p> </p><br/>
+
+		<form>
+			<input class="adcpalestrante" type="text" name="nome completo" placeholder=" Nome Completo:" maxlength="35" id="nome"><br>
+		
+			<input class="adcpalestrante" type="email" name="email" placeholder=" Email:" maxlength="40" id="email"><br>
+		
+			<input class="adcpalestrante" type="text" name="nome da palestra" placeholder=" Nome da palestra:" maxlength="50" id="palestra"><br>
+		
+			<textarea class="adcpalestrante" id="bio" name="biografia" rows="5" cols="33" placeholder=" Bio:"></textarea>
+		
+			<button class="adcpalestrante" type="submit">Salvar</button>
+		</form>
+	</section>
+
+</body>
+</html>
