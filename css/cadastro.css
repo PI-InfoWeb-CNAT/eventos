@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+#logowdev{
+    text-align: center;
+    width: 150px;
+    float: top;
+ }
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+.container {
+    width: 100vw;
+    height: 80vh;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+input{
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.box {
+    background: #74a2b1;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.f {
+    background-color: #F3F1F1;
+    color: #573F3F;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.c{
+    color: white;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.botao {
+    background-color: #085D61;
+    width: 233px;
+    height: 43px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
