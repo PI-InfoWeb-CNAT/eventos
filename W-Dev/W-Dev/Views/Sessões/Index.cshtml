@@ -1,0 +1,120 @@
+﻿@model IEnumerable<W_Dev.Models.Sessão>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="conteudo">
+    <h1>Programação</h1>
+    <p> </p><br />
+    <div class="containerDia_inicorganizador">
+        <h2>1° dia (01/10)</h2>
+        <div class="containerTurno_inicorganizador">
+            <h2>Manhã</h2>
+            <br />
+            <table class="inicorganizador">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HoraInicial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Horafinal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HoraInicial)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Horafinal)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.SessãoId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.SessãoId })
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <h2>Tarde</h2>
+            <table class="inicorganizador">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HoraInicial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Horafinal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (Convert.ToInt32(item.HoraInicial) >= 12 && Convert.ToInt32(item.Horafinal) <= 19)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HoraInicial)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Horafinal)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
+                                @Html.ActionLink("Deletar", "Delete", new { id = item.SessãoId })
+                            </td>
+                        </tr>
+
+
+                    }
+                }
+
+            </table>
+            <br />
+            <br />
+            @Html.ActionLink("Adicionar Programação", "Create")
+        </div>
+    </div>
+</section>
+
+@section ScriptPage{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("aDestaque");
+            $('#liProgramação').addClass("aDestaque");
+        });
+    </script>
+}
+

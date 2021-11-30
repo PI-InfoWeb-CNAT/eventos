@@ -1,0 +1,119 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+
+body {
+    font-family: 'Antic', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+/*~~~~~~MENU LATERAL~~~~~~~~~~*/
+img#logo {
+    width: 250px;
+}
+
+div#logo {
+    text-align: center;
+}
+
+ul#menuLateral {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+    ul#menuLateral li :hover {
+        font-weight: bold;
+    }
+
+nav#navLateral {
+    position: fixed;
+    float: left;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #75A2B0;
+}
+
+a.menuLateral {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: black;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.aDestaque {
+    background: #CCCCCC;
+    text-decoration: none;
+}
+/*~~~~~MENU SUPERIOR~~~~~~~*/
+nav#navSuperior {
+    display: inline;
+    float: right;
+    margin-right: 10px;
+}
+
+img.iconeSuperior {
+    height: 30px;
+}
+
+.menu {
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    float: left;
+}
+
+    .menu li {
+        position: relative;
+        float: left;
+        border-right: 1px solid #c0c0c0;
+    }
+
+        .menu li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+        }
+
+            .menu li a:hover {
+                background: #333;
+                color: #fff;
+                text-shadow: 0px 0px 5px #fff;
+            }
+
+        .menu li ul {
+            position: absolute;
+            top: 25px;
+            left: -10vw;
+            background-color: #fff;
+            display: none;
+        }
+
+        .menu li:hover ul, .menu li.over ul {
+            display: block;
+        }
+
+        .menu li ul li {
+            border: 1px solid #c0c0c0;
+            display: block;
+            width: 150px;
+        }
+/*~~~~~CONTEÚDO~~~~~~~*/
+section#conteudo {
+    width: 70%;
+    margin-left: 300px;
+    margin-bottom: 10px;
+}
