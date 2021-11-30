@@ -1,0 +1,212 @@
+﻿/*=======================GERENCIAR ORGANIZADORES E PALESTRANTES========================*/
+/*~~~ BLOCOS DE PESSOA~~~~*/
+div.blocoPessoa {
+    background-color: #75A2B0;
+    border-radius: 40px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+    div.blocoPessoa img {
+        float: left;
+        height: 115px;
+        margin-right: 20px;
+    }
+
+div.textosPessoa p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    word-wrap: break-word;
+}
+/*~~~~ ADICIONAR PESSOA ~~~*/
+div#adicionarPessoa {
+    background-color: #75A2B0;
+    border-radius: 40px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+img.gerenciarPessoa {
+    height: 60px;
+}
+/*============================GERENCIAR CERTIFICADOS==================================*/
+/*~~~~Bloco certificado~~~*/
+div.gerenciarCertificados {
+    background-color: #75A2B0;
+    height: 60vh;
+    text-align: center;
+    line-height: 60vh;
+    margin-bottom: 10px;
+}
+/*~~~~~~BOTÃO~~~~~~*/
+button.gerenciarCertificados {
+    background-color: #085D61;
+    font-size: 24px;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-family: 'Antic', sans-serif;
+    position: relative;
+    left: 40%;
+}
+/*=======================================CHECKLIST=======================================*/
+/*~~~~~TABELA~~~~~~~*/
+table.checklist {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    table.checklist tr {
+        background-color: #CCCCCC;
+        border-bottom: 3px solid white;
+    }
+
+    table.checklist th {
+        text-align: left;
+        padding: 5px;
+    }
+
+    table.checklist td {
+        font-size: 24px;
+        padding: 5px;
+    }
+        /* Set border-radius on the top-left and bottom-left of the first table data on the table row*/
+        table.checklist td:first-child,
+        table.checklist th:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        /* Set border-radius on the top-right and bottom-right of the last table data on the table row*/
+        table.checklist td:last-child,
+        table.checklist th:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+/*=======================================INSCRITOS========================================*/
+section.inscritos {
+    display: flex;
+    flex-wrap: wrap; /*quesbra a linha*/
+    justify-content: flex-start;
+}
+
+div.inscrito {
+    background: #CCCCCC;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 8px;
+}
+
+/*=====================================INICIO ORGANIZADOR=================================*/
+/*~~~~~~BOTÃO~~~~~*/
+button.inicorganizador {
+    background-color: #BED9E4;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0;
+}
+/*~~~~~~ÍCONE EDITAR~~~~~~*/
+img.inicorganizador {
+    float: right;
+    height: 20px;
+}
+/*~~~~PROGRAMAÇÃO*/
+div.containerDia_inicorganizador {
+    text-align: center;
+}
+
+div.containerTurno_inicorganizador {
+    background-color: #75A2B0;
+    width: 60vw;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 10px;
+}
+/*~~~~TABELAS~~~~~*/
+table.inicorganizador {
+    width: 90%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+    table.inicorganizador tr {
+        background-color: #CCCCCC;
+        border-bottom: 3px solid #75A2B0;
+    }
+
+    table.inicorganizador th {
+        text-align: left;
+        padding: 5px;
+    }
+
+    table.inicorganizador td {
+        font-size: 20px;
+        padding: 5px;
+    }
+        /* Set border-radius on the top-left and bottom-left of the first table data on the table row*/
+        table.inicorganizador td:first-child,
+        table.inicorganizador th:first-child {
+            border-radius: 15px 0 0 15px;
+        }
+
+        /* Set border-radius on the top-right and bottom-right of the last table data on the table row*/
+        table.inicorganizador td:last-child,
+        table.inicorganizador th:last-child {
+            border-radius: 0 15px 15px 0;
+        }
+
+/*==================EVENTOS=====================*/
+/*~~~~~imagem adicionar~~~~~~~*/
+img#adicionarEvento {
+    height: 40px;
+}
+
+/*~~~~~bloco eventos~~~~~~*/
+button.evento {
+    background-color: #9AC6D4;
+    margin: 0.5vw;
+    width: 20vw;
+    height: 30vw;
+    margin-top: 80px;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Antic',sans-serif;
+    font-size: 35px;
+}
+/*==================ADICIONAR PALESTRANTE=====================*/
+@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+
+.adcpalestrante {
+    background-color: #DBDBDB;
+    border-radius: 30px;
+    font-size: 24px;
+    padding: 5px;
+    color: #000000;
+    border: none;
+    margin-bottom: 10px;
+    width: 55vw;
+    height: 8vh;
+    font-family: 'Antic', sans-serif;
+}
+
+textarea.adcpalestrante {
+    height: 24vh;
+}
+
+button.adcpalestrante {
+    background-color: #9ac7d6;
+    width: 291px;
+    height: 39px;
+    font-size: 24px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 10px;
+    font-family: 'Antic', sans-serif;
+}

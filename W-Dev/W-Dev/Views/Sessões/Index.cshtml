@@ -29,32 +29,33 @@
                     <th></th>
                 </tr>
 
-                @foreach (var item in Model)
-                {
-                    if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Titulo)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HoraInicial)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Horafinal)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Local)
-                            </td>
-                            <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.SessãoId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.SessãoId })
-                            </td>
-                        </tr>
+                @foreach (var item in Model) 
+                { int hi1 = int.Parse(item.HoraInicial.Substring(0, 2));
+                    int hf1 = int.Parse(item.Horafinal.Substring(0, 2));
+                        <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                        if (hi1 >= 7 && hf1 <= 12)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titulo)
+                                </td>
+                                <td>
+                                    <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Local)
+                                </td>
+                                <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.SessãoId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.SessãoId })
+                                </td>
+                            </tr>
+                        }
                     }
-                }
-            </table>
+                </table>
             <h2>Tarde</h2>
             <table class="inicorganizador">
                 <tr>
@@ -75,36 +76,39 @@
 
                 @foreach (var item in Model)
                 {
-                    if (Convert.ToInt32(item.HoraInicial) >= 12 && Convert.ToInt32(item.Horafinal) <= 19)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Titulo)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HoraInicial)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Horafinal)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Local)
-                            </td>
-                            <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
-                                @Html.ActionLink("Deletar", "Delete", new { id = item.SessãoId })
-                            </td>
-                        </tr>
+                        int hi2 = int.Parse(item.HoraInicial.Substring(0, 2));
+                        int hf2 = int.Parse(item.Horafinal.Substring(0, 2));
+                        <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                        if (hi2 >= 12 && hf2 <= 19)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titulo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HoraInicial)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Horafinal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Local)
+                                </td>
+                                <td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
+                                    @Html.ActionLink("Deletar", "Delete", new { id = item.SessãoId })
+                                </td>
+                            </tr>
 
 
+                        }
                     }
-                }
 
-            </table>
+                </table>
             <br />
             <br />
-            @Html.ActionLink("Adicionar Programação", "Create")
+            @Html.ActionLink("Adicionar Sessão", "Create")
         </div>
     </div>
 </section>

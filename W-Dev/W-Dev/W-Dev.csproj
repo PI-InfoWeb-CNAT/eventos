@@ -196,7 +196,8 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\Site.css" />
-    <Content Include="css\geralOrganizador.css.css" />
+    <Content Include="css\geralOrganizador.css" />
+    <Content Include="css\individualOrganizador.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\DataTables\css\mixins.scss" />
