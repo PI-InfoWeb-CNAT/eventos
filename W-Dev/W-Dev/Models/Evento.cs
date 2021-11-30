@@ -12,8 +12,10 @@ namespace W_Dev.Models
         public int EventoId { get; set; }
         public string Nome { get; set; }
         public string Instagram { get; set; }
-        public string Logo { get; set; }
-        public string Banner { get; set; }
+        public string LogotipoMimeType { get; set; }
+        public byte[] Logo { get; set; }
+        public string BannerMimeType { get; set; }
+        public byte[] Banner { get; set; }
         public TimeSpan Dias { get; set; }
         public DateTime DataInicial { get; set; }
         public DateTime DataFinal { get; set; }

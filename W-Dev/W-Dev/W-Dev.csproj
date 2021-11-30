@@ -196,6 +196,7 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\geralAluno.css" />
     <Content Include="css\geralOrganizador.css" />
     <Content Include="css\individualOrganizador.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -275,7 +276,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\ProgramaçãoController.cs" />
     <Compile Include="Controllers\SessõesController.cs" />
+    <Compile Include="DAL\EventosDAL.cs" />
     <Compile Include="DAL\SessoesDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,6 +298,12 @@
     <Content Include="Views\Sessões\Edit.cshtml" />
     <Content Include="Views\Sessões\Details.cshtml" />
     <Content Include="Views\Sessões\Delete.cshtml" />
+    <Content Include="Views\Eventos\Index.cshtml" />
+    <Content Include="Views\Eventos\Create.cshtml" />
+    <Content Include="Views\Eventos\Edit.cshtml" />
+    <Content Include="Views\Eventos\Details.cshtml" />
+    <Content Include="Views\Eventos\Delete.cshtml" />
+    <Content Include="Views\Shared\LayoutAluno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -304,7 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Eventos\" />
+    <Folder Include="Views\Programação\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

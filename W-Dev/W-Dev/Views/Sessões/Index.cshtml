@@ -18,11 +18,11 @@
                         @Html.DisplayNameFor(model => model.Titulo)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.HoraInicial)
+                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Horafinal)
-                    </th>
+                    <!--<th>
+                        Html.DisplayNameFor(model => model.Horafinal)
+                    </th>-->
                     <th>
                         @Html.DisplayNameFor(model => model.Local)
                     </th>
@@ -63,11 +63,11 @@
                         @Html.DisplayNameFor(model => model.Titulo)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.HoraInicial)
+                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Horafinal)
-                    </th>
+                    <!--<th>
+                        Html.DisplayNameFor(model => model.Horafinal)
+                    </th>-->
                     <th>
                         @Html.DisplayNameFor(model => model.Local)
                     </th>
@@ -86,10 +86,7 @@
                                     @Html.DisplayFor(modelItem => item.Titulo)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.HoraInicial)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Horafinal)
+                                    <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Local)

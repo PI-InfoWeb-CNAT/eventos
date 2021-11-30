@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using W_Dev.Context;
 using W_Dev.Models;
+using W_Dev.DAL;
 
 namespace W_Dev.Controllers
 {
@@ -14,6 +15,36 @@ namespace W_Dev.Controllers
     {
         // GET: Eventos
         private EFContext context = new EFContext();
+        EventosDAL eventosDAL = new EventosDAL();
+        private ActionResult ObterVisaoEventosPorId(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Evento evento = eventosDAL.ObterEventosPorId((long)id);
+            if (evento == null)
+            {
+                return HttpNotFound();
+            }
+            return View(evento);
+        }
+        private byte[] SetLogotipo(HttpPostedFileBase logotipo)
+        {
+            var bytesLogotipo = new byte[logotipo.ContentLength];
+            logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
+            return bytesLogotipo;
+        }
+        public FileContentResult GetLogotipo(long id)
+        {
+            Evento evento = eventosDAL.ObterEventosPorId(id);
+            if (evento != null)
+            {
+                return File(evento.Logo, evento.LogotipoMimeType);
+            }
+            return null;
+        }
         public ActionResult Index()
         {
             return View(context.Eventos.OrderBy(c => c.Nome));

@@ -17,13 +17,13 @@
             <img id="logo" src="Wdev_Logo.png">
         </div>
         <ul id="menuLateral">
-            <li><a class="menuLateral" href="checklist.html">Checklist</a></li>
+            <!--<li><a class="menuLateral" href="checklist.html">Checklist</a></li>
             <li><a class="menuLateral" href="gerenciarCertificados.html">Certificados</a></li>
             <li><a class="menuLateral" href="inscritos.html">Inscritos</a></li>
             <li><a class="menuLateral" href="gerenciarPalestrantes.html">Palestrantes</a></li>
             <li><a class="menuLateral" id="aDestaque" href="#">Programação</a></li>
-            <li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>
-            <!--<li id="liProgramação" class="menuLateral" role="presentation">Html.ActionLink("Programação", "Index", "Sessões")</li>-->
+            <li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>-->
+            <li id="liProgramação" class="menuLateral" role="presentation">@Html.ActionLink("Programação", "Index", "Sessões")</li>
         </ul>
     </nav>
     <!--MENU SUPERIOR-->
@@ -34,7 +34,7 @@
                 <a class="menuSuperior" href="#"><img class="iconeSuperior" src="configuracoes.png" id="configuracao"></a>
                 <ul>
                     <li><a href="#">Configurações:</a></li>
-                    <li><a href="#">Eventos Anteriores</a></li>
+                    <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos")</li>
                 </ul>
             </li>
             <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="sair.png" id="saida"></a></li>
