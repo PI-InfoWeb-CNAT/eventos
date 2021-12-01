@@ -8,13 +8,14 @@ using System.Web.Mvc;
 using W_Dev.Context;
 using W_Dev.Models;
 using W_Dev.DAL;
+using System.IO;
 
 namespace W_Dev.Controllers
 {
     public class EventosController : Controller
     {
         // GET: Eventos
-        private EFContext context = new EFContext();
+        //private EFContext context = new EFContext();
         EventosDAL eventosDAL = new EventosDAL();
         private ActionResult ObterVisaoEventosPorId(long? id)
         {
@@ -36,6 +37,17 @@ namespace W_Dev.Controllers
             logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
             return bytesLogotipo;
         }
+        public ActionResult DownloadArquivo(long id)
+        {
+            Evento evento = eventosDAL.ObterEventosPorId(id);
+            FileStream fileStream = new FileStream(Server.MapPath(
+            "~/App_Data/" + evento.NomeArquivoLogo), FileMode.Create,
+            FileAccess.Write);
+            fileStream.Write(evento.Logo, 0,
+            Convert.ToInt32(evento.TamanhoArquivoLogo));
+            fileStream.Close();
+            return File(fileStream.Name, evento.LogotipoMimeType, evento.NomeArquivoLogo);
+        }
         public FileContentResult GetLogotipo(long id)
         {
             Evento evento = eventosDAL.ObterEventosPorId(id);
@@ -45,11 +57,37 @@ namespace W_Dev.Controllers
             }
             return null;
         }
+        private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, string chkRemoverImagem)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (chkRemoverImagem != null)
+                    {
+                        evento.Logo = null;
+                    }
+                    if (logotipo != null)
+                    {
+                        evento.LogotipoMimeType = logotipo.ContentType;
+                        evento.Logo = SetLogotipo(logotipo);
+                        evento.NomeArquivoLogo = logotipo.FileName;
+                        evento.TamanhoArquivoLogo = logotipo.ContentLength;
+                    }
+                    eventosDAL.GravarEventos(evento);
+                    return RedirectToAction("Index");
+                }
+                return View(evento);
+            }
+            catch
+            {
+                return View(evento);
+            }
+        }
         public ActionResult Index()
         {
-            return View(context.Eventos.OrderBy(c => c.Nome));
+            return View(eventosDAL.ObterEventosClassificadosPorNome());
         }
-
         // GET: Create
         public ActionResult Create()
         {
@@ -58,15 +96,22 @@ namespace W_Dev.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Evento evento)
+        public ActionResult Create(Evento evento, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
+        {
+            return GravarEventos(evento, logotipo, chkRemoverImagem);
+        }
+        /*public ActionResult Create(Evento evento)
         {
             context.Eventos.Add(evento);
             context.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }*/
         // GET: Fabricantes/Edit/5
         public ActionResult Edit(long? id)
         {
+            return ObterVisaoEventosPorId(id);
+        }
+        /*{
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -77,12 +122,16 @@ namespace W_Dev.Controllers
                 return HttpNotFound();
             }
             return View(evento);
-        }
+        }*/
 
         // POST: Fabricantes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Evento evento)
+        public ActionResult Edit(Evento evento, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
+        {
+            return GravarEventos(evento, logotipo, chkRemoverImagem);
+        }
+        /*public ActionResult Edit(Evento evento)
         {
             if (ModelState.IsValid)
             {
@@ -91,10 +140,12 @@ namespace W_Dev.Controllers
                 return RedirectToAction("Index");
             }
             return View(evento);
-        }
-        // GET: Fabricantes/Details/5
+        }*/
         public ActionResult Details(long? id)
         {
+            return ObterVisaoEventosPorId(id);
+        }
+        /*{
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -105,11 +156,14 @@ namespace W_Dev.Controllers
                 return HttpNotFound();
             }
             return View(evento);
-        }
+        }*/
 
         // GET: Fabricantes/Delete/5
         public ActionResult Delete(long? id)
         {
+            return ObterVisaoEventosPorId(id);
+        }
+        /*{
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -120,17 +174,31 @@ namespace W_Dev.Controllers
                 return HttpNotFound();
             }
             return View(evento);
-        }
+        }*/
         // POST: Fabricantes/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(long id)
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                Evento evento = eventosDAL.EliminarEventosPorId(id);
+                TempData["Message"] = "Evento " + evento.Nome.ToUpper() + " foi removido";
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        /*public ActionResult Delete(long id)
         {
             Evento evento = context.Eventos.Find(id);
             context.Eventos.Remove(evento);
             context.SaveChanges();
             TempData["Message"] = "Evento " + evento.Nome.ToUpper() + " foi removido";
             return RedirectToAction("Index");
-        }
-    }
+        }*/
+
+    } 
 }

@@ -19,6 +19,10 @@ namespace W_Dev.Models
         public TimeSpan Dias { get; set; }
         public DateTime DataInicial { get; set; }
         public DateTime DataFinal { get; set; }
+        public string NomeArquivoLogo { get; set; }
+        public long TamanhoArquivoLogo { get; set; }
+        public string NomeArquivoBanner { get; set; }
+        public long TamanhoArquivoBanner { get; set; }
 
 
     }
