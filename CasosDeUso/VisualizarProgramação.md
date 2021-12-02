@@ -10,7 +10,7 @@
 
 
 ### 1. Resumo
-Este caso de uso permite que o inscrito veja a programação .
+Este caso de uso permite que o inscrito veja a programação do evento.
 
 ### 2. Atores
 Inscrito
