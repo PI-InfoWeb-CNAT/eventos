@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Organizador</title>
+    <link rel="stylesheet" type="text/css" href="~/css/geralOrganizador.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/individualOrganizador.css" />
+    <link href="@Url.Content("~/content/bootstrap.css")" rel="stylesheet" />
+    @RenderSection("styles", false);
+    <!--<script src="~/Scripts/modernizr-2.8.3.js"></script>-->
+</head>
+<body>
+    <!--MENU LATERAL-->
+    <nav id="navLateral">
+        <div id="logo">
+            <img id="logo" src="Wdev_Logo.png">
+        </div>
+        <ul id="menuLateral">
+            <!--<li><a class="menuLateral" href="checklist.html">Checklist</a></li>
+            <li><a class="menuLateral" href="gerenciarCertificados.html">Certificados</a></li>
+            <li><a class="menuLateral" href="inscritos.html">Inscritos</a></li>
+            <li><a class="menuLateral" href="gerenciarPalestrantes.html">Palestrantes</a></li>
+            <li><a class="menuLateral" id="aDestaque" href="#">Programação</a></li>
+            <li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>-->
+            <li id="liProgramação" class="menuLateral" role="presentation">@Html.ActionLink("Programação", "Index", "Sessões")</li>
+        </ul>
+    </nav>
+    <!--MENU SUPERIOR-->
+    <nav id="navSuperior">
+        <ul class="menu">
+            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="icone-perfil.png" id="usuario"></a></li>
+            <li>
+                <a class="menuSuperior" href="#"><img class="iconeSuperior" src="configuracoes.png" id="configuracao"></a>
+                <ul>
+                    <li><a href="#">Configurações:</a></li>
+                    <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos")</li>
+                </ul>
+            </li>
+            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="sair.png" id="saida"></a></li>
+        </ul>
+    </nav>
+    @RenderBody()
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("ScriptPage", false);
+
+</body>
+</html>

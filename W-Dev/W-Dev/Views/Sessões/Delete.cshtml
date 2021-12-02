@@ -1,0 +1,59 @@
+﻿@model W_Dev.Models.Sessão
+
+@{
+    ViewBag.Title = "Delete";
+}
+<section id="conteudo">
+    <h2>Apagar Sessão</h2>
+
+    <h3>Você realmente quer apagar a sessão?</h3>
+    <div>
+        <h4>Sessão</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HoraInicial)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HoraInicial)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Horafinal)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Horafinal)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Local)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Local)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</section>
+
