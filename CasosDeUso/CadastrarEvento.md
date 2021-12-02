@@ -25,14 +25,14 @@ O sistema deve cadastrar o evento de forma rápida.
 ### *5.1 Fluxo básico*
 |   Ator   | Sistema |
 |:---------|:------|
-|O organizador clica no botão de "eventos anteriores".| |
-| |O sistema mostra a interface de "eventos anteriores".|
-|O organizador visualiza a tela de "eventos anteriores".| |
-| |O sistema solicita o nome do evento, a data inicial e a data final.|
-O organizador preenche os dados necessários colocando o nome do evento, a data inicial e a data final.| |
-|  |O sistema grava os dados preenchidos pelo organizador.|
-O organizador clica em "salvar".| |
-| |O sistema cadastra o evento.|
+|1. O organizador clica no botão de "eventos anteriores".| |
+| | 2. O sistema mostra a interface de "eventos anteriores".|
+|3. O organizador visualiza a tela de "eventos anteriores".| |
+| |4. O sistema solicita o nome do evento, a data inicial e a data final.|
+|5. O organizador preenche os dados necessários colocando o nome do evento, a data inicial e a data final.| |
+|  |6. O sistema grava os dados preenchidos pelo organizador.|
+|7. O organizador clica em "salvar".| |
+| |8. O sistema cadastra o evento.|
 
 ### *5.2 Fluxo de exceção 1 – Data inicial inválida*
 O organizador clica no botão de adicionar evento.
