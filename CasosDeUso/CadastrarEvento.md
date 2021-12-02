@@ -70,4 +70,4 @@ O organizador insere um título sem texto.
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um título válido.
 
 ### 6. Protótipo(s) de interface do caso de uso
-![Pagina de Eventos](CasosDeUso/Pagina de Eventos.png)
+![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos.png)
