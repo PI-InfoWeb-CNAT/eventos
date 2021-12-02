@@ -71,3 +71,5 @@ O sistema apresenta uma mensagem de erro, solicitando para o organizador utiliza
 
 ### 6. Protótipo(s) de interface do caso de uso
 ![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos.png)
+
+![Pagina de Eventos2](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos2.png)
