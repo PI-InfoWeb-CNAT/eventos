@@ -22,8 +22,9 @@ O organizador deve ter feito login no sistema.
 O sistema cadastra a sessão de forma rápida.
 
 ###5. Fluxos de evento
-5.1 Fluxo básico
+##5.1 Fluxo básico
 |   Ator   | Sistema |
+|:---------|:------|
 |O organizador clica em adicionar sessão.|:---------|
 |:---------|O sistema solicita horário inicial, hora final, local e título da sessão.|
 O organizador preenche os dados necessários colocando hora inicial, hora final, local e título.|:---------|
