@@ -74,3 +74,6 @@ O sistema solicita horário inicial, hora final, local e título da sessão.
 O organizador insere um local sem texto.
 
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um local válido.
+
+### 6. Protótipo(s) de interface do caso de uso
+![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20Inicial%20do%20Organizador.png)
