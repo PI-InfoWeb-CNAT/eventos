@@ -31,7 +31,7 @@ O sistema cadastra a sessão de forma rápida.
 |  |4. O sistema grava os dados preenchidos pelo organizador.|
 |5. O organizador clica em adicionar sessão.| |
 | |6. O sistema cadastra a sessão.|
-O organizador visualiza a sessão anexada à tabela de programação.| |
+|7. O organizador visualiza a sessão anexada à tabela de programação.| |
 
 ### *5.2 Fluxo de exceção 1 – Hora inicial inválida*
 
