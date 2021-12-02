@@ -36,21 +36,36 @@ O organizador clica em "salvar".| |
 
 ### *5.2 Fluxo de exceção 1 – Data inicial inválida*
 O organizador clica no botão de adicionar evento.
+
 O sistema mostra a interface de adicionar evento.
-O sistema solicita o nome do evento, a data inicial e a data final.	
+
+O sistema solicita o nome do evento, a data inicial e a data final.
+
 O organizador insere uma data inicial inválida.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
 
 ### *5.3 Fluxo de exceção 2 – Data final inválida*
+
 O organizador clica no botão de adicionar evento.
+
 O sistema mostra a interface de adicionar evento.
+
 O sistema solicita o título do evento, a data inicial e a data final.	
+
 O organizador insere uma data final inválida.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
 
 ### *5.4 Fluxo de exceção 3 – título inválido*
+
 O organizador clica no botão de adicionar evento.
+
 O sistema mostra a interface de adicionar evento.
+
 O sistema solicita o nome do evento, a data inicial e a data final.	
+
 O organizador insere um título sem texto.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um título válido.
+
