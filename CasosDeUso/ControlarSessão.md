@@ -21,8 +21,8 @@ O organizador deve ter feito login no sistema.
 ### 4. Pós-condições 
 O sistema cadastra a sessão de forma rápida.
 
-###5. Fluxos de evento
-##*5.1 Fluxo básico*
+### 5. Fluxos de evento
+### *5.1 Fluxo básico*
 |   Ator   | Sistema |
 |:---------|:------|
 |O organizador clica em adicionar sessão.|         |
@@ -33,25 +33,44 @@ O organizador clica em adicionar sessão.| |
 | |O sistema cadastra a sessão.|
 O organizador visualiza a sessão anexada à tabela de programação.| |
 
-##*5.2 Fluxo de exceção 1 – Hora inicial inválida*
+### *5.2 Fluxo de exceção 1 – Hora inicial inválida*
+
 O organizador entra na página de programação.
+
 O organizador clica em adicionar sessão.
+
 O sistema solicita horário inicial, hora final, local e título da sessão.
+
 O organizador insere uma hora inicial inválida.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma hora válida.
-5.3 Fluxo de exceção 2 – Hora final inválida
+
+### 5.3 Fluxo de exceção 2 – Hora final inválida
+
 O organizador clica em adicionar sessão.
+
 O sistema solicita horário inicial, hora final, local e título da sessão.
+
 O organizador insere uma hora final inválida.
+
 O sistema apresenta uma mensagem de erro, solicitando que o organizador utilize uma hora válida.
-5.4 Fluxo de exceção 3 – título inválido
+
+### 5.4 Fluxo de exceção 3 – título inválido
+
 O organizador clica no botão de adicionar sessão.
-O sistema solicita horário inicial, hora final, local e título da sessão.	
+
+O sistema solicita horário inicial, hora final, local e título da sessão.
+
 O organizador insere um título sem texto.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um título válido.
 
-##*5.3 Fluxo de exceção 3 – local inválido*
+### *5.3 Fluxo de exceção 3 – local inválido*
+
 O organizador clica no botão de adicionar sessão.
-O sistema solicita horário inicial, hora final, local e título da sessão.	
+
+O sistema solicita horário inicial, hora final, local e título da sessão.
+
 O organizador insere um local sem texto.
+
 O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um local válido.
