@@ -22,9 +22,9 @@ O inscrito deve ter feito login no sistema.
 ### *4.1 Fluxo básico*
 |   Ator   | Sistema |
 |:---------|:------|
-|O inscrito faz login no sistema.| |
-| |O sistema apresenta a tabela de programação.|
-|O inscrito visualiza a tabela de programação| |
+|1. O inscrito faz login no sistema.| |
+| |2. O sistema apresenta a tabela de programação.|
+|3. O inscrito visualiza a tabela de programação| |
 
 ### 5. Protótipo(s) de interface do caso de uso
 ![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/P%C3%A1gina%20inicial%20-%20Aluno.png)
