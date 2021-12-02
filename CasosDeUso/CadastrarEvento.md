@@ -57,7 +57,7 @@ O sistema deve cadastrar o evento de forma rápida.
 
 5. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
 
-### *5.4 Fluxo de exceção 3 – título inválido*
+### *5.4 Fluxo de exceção 3 – Título inválido*
 
 1. O organizador clica no botão de adicionar evento.
 
