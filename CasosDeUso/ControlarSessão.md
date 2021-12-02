@@ -35,15 +35,13 @@ O sistema cadastra a sessão de forma rápida.
 
 ### *5.2 Fluxo de exceção 1 – Hora inicial inválida*
 
-1. O organizador entra na página de programação.
+1. O organizador clica em adicionar sessão.
 
-2. O organizador clica em adicionar sessão.
+2. O sistema solicita horário inicial, hora final, local e título da sessão.
 
-3. O sistema solicita horário inicial, hora final, local e título da sessão.
+3. O organizador insere uma hora inicial inválida.
 
-4. O organizador insere uma hora inicial inválida.
-
-5. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma hora válida.
+4. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma hora válida.
 
 ### 5.3 Fluxo de exceção 2 – Hora final inválida
 
