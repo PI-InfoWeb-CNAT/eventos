@@ -1,0 +1,113 @@
+﻿@model IEnumerable<W_Dev.Models.Sessão>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAluno.cshtml";
+}
+
+<section id="conteudo">
+    <div class="containerDia_inicorganizador">
+        <h2>1° dia (01/10)</h2>
+        <div class="containerTurno">
+            <h2>Manhã</h2>
+            <br/>
+            <table class="inicorganizador">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
+                    </th>
+                    <!--<th>
+                        Html.DisplayNameFor(model => model.Horafinal)
+                    </th>-->
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    int hi1 = int.Parse(item.HoraInicial.Substring(0, 2));
+                    int hf1 = int.Parse(item.Horafinal.Substring(0, 2));
+                    <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                    if (hi1 >= 7 && hf1 <= 12)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <!--<td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td>
+                                Html.ActionLink("Edit", "Edit", new { id = item.SessãoId }) |
+                                Html.ActionLink("Delete", "Delete", new { id = item.SessãoId })
+                            </td>-->
+                        </tr>
+                    }
+                }
+            </table>
+            <h2>Tarde</h2>
+            <table class="inicorganizador">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
+                    </th>
+                    <!--<th>
+                        Html.DisplayNameFor(model => model.Horafinal)
+                    </th>-->
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    int hi2 = int.Parse(item.HoraInicial.Substring(0, 2));
+                    int hf2 = int.Parse(item.Horafinal.Substring(0, 2));
+                    <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                    if (hi2 >= 12 && hf2 <= 19)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <!--<td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td>
+                                Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
+                                Html.ActionLink("Deletar", "Delete", new { id = item.SessãoId })
+                            </td>-->
+                        </tr>
+
+
+                    }
+                }
+            </table>
+            <br />
+            <br />
+            <!--Html.ActionLink("Adicionar Sessão", "Create")-->
+        </div>
+    </div>
+</section>
+<footer class="paginicialAluno">
+    <h4>Site Desenvolvido pela DIATINF - Diretoria Acadêmica de Gestão de Tecnológia da Informação - IFRN/CNAT</h4>
+</footer>
