@@ -25,11 +25,11 @@ O sistema cadastra a sessão de forma rápida.
 ##5.1 Fluxo básico
 |   Ator   | Sistema |
 |:---------|:------|
-|O organizador clica em adicionar sessão.|:---------|
-|:---------|O sistema solicita horário inicial, hora final, local e título da sessão.|
-O organizador preenche os dados necessários colocando hora inicial, hora final, local e título.|:---------|
-|:---------|O sistema grava os dados preenchidos pelo organizador.|
-O organizador clica em adicionar sessão.|:---------|
-|:---------|O sistema cadastra a sessão.|
-O organizador visualiza a sessão anexada à tabela de programação.|:---------|
+|O organizador clica em adicionar sessão.|         |
+|        |O sistema solicita horário inicial, hora final, local e título da sessão.|
+O organizador preenche os dados necessários colocando hora inicial, hora final, local e título.| |
+|  |O sistema grava os dados preenchidos pelo organizador.|
+O organizador clica em adicionar sessão.| |
+| |O sistema cadastra a sessão.|
+O organizador visualiza a sessão anexada à tabela de programação.| |
 
