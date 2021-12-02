@@ -35,39 +35,39 @@ O sistema deve cadastrar o evento de forma rápida.
 | |8. O sistema cadastra o evento.|
 
 ### *5.2 Fluxo de exceção 1 – Data inicial inválida*
-O organizador clica no botão de adicionar evento.
+1. O organizador clica no botão de adicionar evento.
 
-O sistema mostra a interface de adicionar evento.
+2. O sistema mostra a interface de adicionar evento.
 
-O sistema solicita o nome do evento, a data inicial e a data final.
+3. O sistema solicita o nome do evento, a data inicial e a data final.
 
-O organizador insere uma data inicial inválida.
+5. O organizador insere uma data inicial inválida.
 
-O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
+6. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
 
 ### *5.3 Fluxo de exceção 2 – Data final inválida*
 
-O organizador clica no botão de adicionar evento.
+1. O organizador clica no botão de adicionar evento.
 
-O sistema mostra a interface de adicionar evento.
+2. O sistema mostra a interface de adicionar evento.
 
-O sistema solicita o título do evento, a data inicial e a data final.	
+3. O sistema solicita o título do evento, a data inicial e a data final.	
 
-O organizador insere uma data final inválida.
+4. O organizador insere uma data final inválida.
 
-O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
+5. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar uma data válida.
 
 ### *5.4 Fluxo de exceção 3 – título inválido*
 
-O organizador clica no botão de adicionar evento.
+1. O organizador clica no botão de adicionar evento.
 
-O sistema mostra a interface de adicionar evento.
+2. O sistema mostra a interface de adicionar evento.
 
-O sistema solicita o nome do evento, a data inicial e a data final.	
+3. O sistema solicita o nome do evento, a data inicial e a data final.	
 
-O organizador insere um título sem texto.
+4. O organizador insere um título sem texto.
 
-O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um título válido.
+5. O sistema apresenta uma mensagem de erro, solicitando para o organizador utilizar um título válido.
 
 ### 6. Protótipo(s) de interface do caso de uso
 ![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos.png)
