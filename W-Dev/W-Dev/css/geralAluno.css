@@ -15,10 +15,10 @@ body {
 }
 /*---------HEADER-----*/
 img#logowdev {
-    width: 230px;
+    width: 200px;
 }
 
-header {
+header#cabecalho {
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -41,22 +41,22 @@ ul.menu {
     float: left;
 }
 
-    ul.menu li {
-        position: relative;
-        float: left;
-    }
+ul.menu li {
+    position: relative;
+    float: left;
+}
 
-        ul.menu li a {
-            color: #333;
-            text-decoration: none;
-            padding: 5px 10px;
-            display: block;
-        }
+ul.menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
 
-            ul.menu li a:hover {
-                color: #fff;
-                text-shadow: 0px 0px 5px #fff;
-            }
+ul.menu li a:hover {
+    color: #fff;
+    text-shadow: 0px 0px 5px #fff;
+}
 /*=============CERTIFICADO================*/
 div.conteudo_visualizarCertificado {
     justify-content: center;
@@ -79,7 +79,7 @@ div.conteudo_visualizarCertificado {
 }
 /*==============PAGINA INICIAL ALUNO================*/
 /*~~~~PROGRAMAÇÃO*/
-div#conteudo {
+section#conteudo {
     text-align: center;
     margin-top: 10px;
 }
@@ -92,38 +92,13 @@ div.containerTurno {
     padding: 10px;
 }
 /*~~~~TABELAS~~~~~*/
-table {
+table.tabelaAluno {
     width: 80%;
     border-collapse: collapse;
     text-align: left;
     margin: 0 auto;
     margin-bottom: 10px;
-}
-
-    table tr {
-        background-color: #CCCCCC;
-        border-bottom: 3px solid #75A2B0;
-    }
-
-    table th {
-        text-align: left;
-        padding: 5px;
-    }
-
-    table td {
-        font-size: 20px;
-        padding: 5px;
-    }
-/* Set border-radius on the top-left and bottom-left of the first table data on the table row*/
-td:first-child,
-th:first-child {
-    border-radius: 15px 0 0 15px;
-}
-
-/* Set border-radius on the top-right and bottom-right of the last table data on the table row*/
-td:last-child,
-th:last-child {
-    border-radius: 0 15px 15px 0;
+    border-radius: 10px;
 }
 
 /*~~~~~~BOTÃO~~~~~*/

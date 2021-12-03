@@ -6,12 +6,11 @@
 }
 
 <section id="conteudo">
-    <div class="containerDia_inicorganizador">
+    <div class="containerDia">
         <h2>1° dia (01/10)</h2>
         <div class="containerTurno">
             <h2>Manhã</h2>
-            <br/>
-            <table class="inicorganizador">
+            <table class="tabelaAluno">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Titulo)
@@ -55,9 +54,10 @@
                         </tr>
                     }
                 }
-            </table>
+            </table class="tabelaAluno">
+
             <h2>Tarde</h2>
-            <table class="inicorganizador">
+            <table class="tabelaAluno">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Titulo)
@@ -102,9 +102,6 @@
                     }
                 }
             </table>
-            <br />
-            <br />
-            <!--Html.ActionLink("Adicionar Sessão", "Create")-->
         </div>
     </div>
 </section>
