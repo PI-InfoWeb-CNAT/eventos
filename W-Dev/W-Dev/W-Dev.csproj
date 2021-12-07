@@ -212,6 +212,14 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Imagens\editar.png" />
+    <Content Include="Imagens\icone-adicionar %282%29.png" />
+    <Content Include="Imagens\icone-certificado.png" />
+    <Content Include="Imagens\icone-config.png" />
+    <Content Include="Imagens\icone-home.png" />
+    <Content Include="Imagens\icone-perfil.png" />
+    <Content Include="Imagens\icone-sair.png" />
+    <Content Include="Imagens\Wdev_Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -314,7 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagens\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

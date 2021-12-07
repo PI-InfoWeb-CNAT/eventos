@@ -16,7 +16,7 @@ namespace W_Dev.Models
         public byte[] Logo { get; set; }
         public string BannerMimeType { get; set; }
         public byte[] Banner { get; set; }
-        public TimeSpan Dias { get; set; }
+        public int Dias { get; set; }
         public DateTime DataInicial { get; set; }
         public DateTime DataFinal { get; set; }
         public string NomeArquivoLogo { get; set; }

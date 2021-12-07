@@ -8,13 +8,15 @@
     <link rel="stylesheet" type="text/css" href="~/css/individualOrganizador.css" />
     <link href="@Url.Content("~/content/bootstrap.css")" rel="stylesheet" />
     @RenderSection("styles", false);
+    <link href="@Url.Content("~/css/geralOrganizador.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/individualOrganizador.css")" rel="stylesheet" />
     <!--<script src="~/Scripts/modernizr-2.8.3.js"></script>-->
 </head>
 <body>
     <!--MENU LATERAL-->
     <nav id="navLateral">
         <div id="logo">
-            <img id="logo" src="Wdev_Logo.png">
+            <img id="logo" src="~/Imagens/Wdev_Logo.png">
         </div>
         <ul id="menuLateral">
             <!--<li><a class="menuLateral" href="checklist.html">Checklist</a></li>
@@ -29,15 +31,15 @@
     <!--MENU SUPERIOR-->
     <nav id="navSuperior">
         <ul class="menu">
-            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="icone-perfil.png" id="usuario"></a></li>
+            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-perfil.png" id="usuario"></a></li>
             <li>
-                <a class="menuSuperior" href="#"><img class="iconeSuperior" src="configuracoes.png" id="configuracao"></a>
+                <a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-config.png" id="configuracao"></a>
                 <ul>
                     <li><a href="#">Configurações:</a></li>
                     <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos")</li>
                 </ul>
             </li>
-            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="sair.png" id="saida"></a></li>
+            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-sair.png" id="saida"></a></li>
         </ul>
     </nav>
     @RenderBody()

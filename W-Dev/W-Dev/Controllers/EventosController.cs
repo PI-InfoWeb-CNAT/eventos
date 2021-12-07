@@ -57,22 +57,30 @@ namespace W_Dev.Controllers
             }
             return null;
         }
-        private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, string chkRemoverImagem)
+        //private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, string chkRemoverImagem)
+        private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, HttpPostedFileBase banner)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (chkRemoverImagem != null)
-                    {
-                        evento.Logo = null;
-                    }
+                    //if (chkRemoverImagem != null)
+                    //{
+                    //    evento.Logo = null;
+                    //}
                     if (logotipo != null)
                     {
                         evento.LogotipoMimeType = logotipo.ContentType;
                         evento.Logo = SetLogotipo(logotipo);
                         evento.NomeArquivoLogo = logotipo.FileName;
                         evento.TamanhoArquivoLogo = logotipo.ContentLength;
+                    }
+                    if (banner != null)
+                    {
+                        evento.BannerMimeType = banner.ContentType;
+                        evento.Banner = SetLogotipo(banner);
+                        evento.NomeArquivoBanner = banner.FileName;
+                        evento.TamanhoArquivoBanner = banner.ContentLength;
                     }
                     eventosDAL.GravarEventos(evento);
                     return RedirectToAction("Index");
@@ -96,9 +104,9 @@ namespace W_Dev.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Evento evento, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
+        public ActionResult Create(Evento evento, HttpPostedFileBase logo = null, HttpPostedFileBase banner = null)
         {
-            return GravarEventos(evento, logotipo, chkRemoverImagem);
+            return GravarEventos(evento, logo, banner);
         }
         /*public ActionResult Create(Evento evento)
         {
@@ -127,9 +135,9 @@ namespace W_Dev.Controllers
         // POST: Fabricantes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Evento evento, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
+        public ActionResult Edit(Evento evento, HttpPostedFileBase logotipo = null, HttpPostedFileBase banner = null)
         {
-            return GravarEventos(evento, logotipo, chkRemoverImagem);
+            return GravarEventos(evento, logotipo, banner);
         }
         /*public ActionResult Edit(Evento evento)
         {
