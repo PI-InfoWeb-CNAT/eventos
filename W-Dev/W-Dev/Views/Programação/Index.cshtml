@@ -3,14 +3,23 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutAluno.cshtml";
+    int hour1 = 0;
+    int hour2 = 0;
+    int minute1 = 0;
+    int minute2 = 0;
+    string Data1 = "a";
+    string Data2 = "a";
 }
 
 <section id="conteudo">
-    <div class="containerDia">
+    <h1>Programação</h1>
+    <p> </p><br />
+    <div class="containerDia_inicorganizador">
         <h2>1° dia (01/10)</h2>
-        <div class="containerTurno">
+        <div class="containerTurno_inicorganizador">
             <h2>Manhã</h2>
-            <table class="tabelaAluno">
+            <br />
+            <table class="inicorganizador">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Titulo)
@@ -18,88 +27,109 @@
                     <th>
                         <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
                     </th>
-                    <!--<th>
-                        Html.DisplayNameFor(model => model.Horafinal)
-                    </th>-->
                     <th>
                         @Html.DisplayNameFor(model => model.Local)
                     </th>
-                    <th></th>
+                    <th>     </th>
+                    <th>     </th>
                 </tr>
 
                 @foreach (var item in Model)
                 {
-                    int hi1 = int.Parse(item.HoraInicial.Substring(0, 2));
-                    int hf1 = int.Parse(item.Horafinal.Substring(0, 2));
-                    <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
-                    if (hi1 >= 7 && hf1 <= 12)
+                    DateTime MyDate1 = item.HoraInicial;
+                    hour1 = MyDate1.Hour;
+                    minute1 = MyDate1.Minute;
+                    Data1 = MyDate1.ToString("t");
+                    DateTime MyDate2 = item.Horafinal;
+                    hour2 = MyDate2.Hour;
+                    minute2 = MyDate2.Minute;
+                    Data2 = MyDate2.ToString("t");
+
+                    <!--int hi1 = int.Parse(DateTime.Hour);
+                    int hf1 = int.Parse(DateTime.Hour);
+                    if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                    if (hour1 >= 7 && hour2 <= 12)
                     {
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Titulo)
                             </td>
                             <td>
-                                <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
+                                <p>@Html.DisplayFor(modelItem => Data1)-@Html.DisplayFor(modelItem => Data2)</p>
                             </td>
                             <td>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Local)
                             </td>
-                            <!--<td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td><a href="paginainicial.html"><img src="~/Imagens/editar.png" alt="editar" class="inicorganizador"></a></td>
                             <td>
-                                Html.ActionLink("Edit", "Edit", new { id = item.SessãoId }) |
-                                Html.ActionLink("Delete", "Delete", new { id = item.SessãoId })
-                            </td>-->
-                        </tr>
-                    }
-                }
-            </table class="tabelaAluno">
-
-            <h2>Tarde</h2>
-            <table class="tabelaAluno">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Titulo)
-                    </th>
-                    <th>
-                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
-                    </th>
-                    <!--<th>
-                        Html.DisplayNameFor(model => model.Horafinal)
-                    </th>-->
-                    <th>
-                        @Html.DisplayNameFor(model => model.Local)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
-                    int hi2 = int.Parse(item.HoraInicial.Substring(0, 2));
-                    int hf2 = int.Parse(item.Horafinal.Substring(0, 2));
-                    <!--if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
-                    if (hi2 >= 12 && hf2 <= 19)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Titulo)
+                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
+                                @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
                             </td>
-                            <td>
-                                <p>@Html.DisplayFor(modelItem => item.HoraInicial) - @Html.DisplayFor(modelItem => item.Horafinal)</p>
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Local)
-                            </td>
-                            <!--<td><a href="paginainicial.html"><img src="editar.png" alt="editar" class="inicorganizador"></a></td>
-                            <td>
-                                Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
-                                Html.ActionLink("Deletar", "Delete", new { id = item.SessãoId })
-                            </td>-->
+                            <th>
+                            </th>
                         </tr>
                     }
                 }
             </table>
+            <h2>Tarde</h2>
+            <table class="inicorganizador">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
+                    </th>
+                    <!--<th>
+                        Html.DisplayNameFor(model => model.Horafinal)
+                    </th>-->
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    DateTime MyDate1 = item.HoraInicial;
+                    hour1 = MyDate1.Hour;
+                    Data1 = MyDate1.ToString("t");
+                    DateTime MyDate2 = item.Horafinal;
+                    hour2 = MyDate2.Hour;
+                    Data2 = MyDate2.ToString("t");
+
+                    <!--int hi1 = int.Parse(DateTime.Hour);
+                    int hf1 = int.Parse(DateTime.Hour);
+                    if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                    if (hour1 >= 12 && hour2 <= 19)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                <p>@Html.DisplayFor(modelItem => Data1)-@Html.DisplayFor(modelItem => Data2)</p>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Local)
+                            </td>
+                            <td><a href="paginainicial.html"><img src="~/Imagens/editar.png" alt="editar" class="inicorganizador"></a></td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
+                                @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
+                            </td>
+                        </tr>
+
+
+                    }
+                }
+
+            </table>
+            <h1 class="inicorganizador">
+                @Html.ActionLink("Adicionar Sessão", "Create")
+            </h1>
         </div>
     </div>
 </section>

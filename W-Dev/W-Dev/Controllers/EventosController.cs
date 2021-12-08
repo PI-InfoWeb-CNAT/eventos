@@ -31,11 +31,17 @@ namespace W_Dev.Controllers
             }
             return View(evento);
         }
-        private byte[] SetLogotipo(HttpPostedFileBase logotipo)
+        private byte[] SetLogo(HttpPostedFileBase logo)
         {
-            var bytesLogotipo = new byte[logotipo.ContentLength];
-            logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
-            return bytesLogotipo;
+            var bytesLogo = new byte[logo.ContentLength];
+            logo.InputStream.Read(bytesLogo, 0, logo.ContentLength);
+            return bytesLogo;
+        }
+        private byte[] SetBanner(HttpPostedFileBase banner)
+        {
+            var bytesBanner = new byte[banner.ContentLength];
+            banner.InputStream.Read(bytesBanner, 0, banner.ContentLength);
+            return bytesBanner;
         }
         public ActionResult DownloadArquivo(long id)
         {
@@ -46,19 +52,28 @@ namespace W_Dev.Controllers
             fileStream.Write(evento.Logo, 0,
             Convert.ToInt32(evento.TamanhoArquivoLogo));
             fileStream.Close();
-            return File(fileStream.Name, evento.LogotipoMimeType, evento.NomeArquivoLogo);
+            return File(fileStream.Name, evento.LogoMimeType, evento.NomeArquivoLogo);
         }
-        public FileContentResult GetLogotipo(long id)
+        public FileContentResult GetLogo(long id)
         {
             Evento evento = eventosDAL.ObterEventosPorId(id);
             if (evento != null)
             {
-                return File(evento.Logo, evento.LogotipoMimeType);
+                return File(evento.Logo, evento.LogoMimeType);
+            }
+            return null;
+        }
+        public FileContentResult GetBanner(long id)
+        {
+            Evento evento = eventosDAL.ObterEventosPorId(id);
+            if (evento != null)
+            {
+                return File(evento.Banner, evento.BannerMimeType);
             }
             return null;
         }
         //private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, string chkRemoverImagem)
-        private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logotipo, HttpPostedFileBase banner)
+        private ActionResult GravarEventos(Evento evento, HttpPostedFileBase logo, HttpPostedFileBase banner)
         {
             try
             {
@@ -68,17 +83,17 @@ namespace W_Dev.Controllers
                     //{
                     //    evento.Logo = null;
                     //}
-                    if (logotipo != null)
+                    if (logo != null)
                     {
-                        evento.LogotipoMimeType = logotipo.ContentType;
-                        evento.Logo = SetLogotipo(logotipo);
-                        evento.NomeArquivoLogo = logotipo.FileName;
-                        evento.TamanhoArquivoLogo = logotipo.ContentLength;
+                        evento.LogoMimeType = logo.ContentType;
+                        evento.Logo = SetLogo(logo);
+                        evento.NomeArquivoLogo = logo.FileName;
+                        evento.TamanhoArquivoLogo = logo.ContentLength;
                     }
                     if (banner != null)
                     {
                         evento.BannerMimeType = banner.ContentType;
-                        evento.Banner = SetLogotipo(banner);
+                        evento.Banner = SetBanner(banner);
                         evento.NomeArquivoBanner = banner.FileName;
                         evento.TamanhoArquivoBanner = banner.ContentLength;
                     }

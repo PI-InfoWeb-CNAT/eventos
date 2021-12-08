@@ -15,9 +15,9 @@ namespace W_Dev.Models
         [Required(ErrorMessage = "Informe o titulo da sessão")]
         public string Titulo { get; set; }
         [DisplayName("Hora de Inicio")]
-        public string HoraInicial { get; set; }
+        public DateTime HoraInicial { get; set; }
         [DisplayName("Hora de Termino")]
-        public string Horafinal { get; set; }
+        public DateTime Horafinal { get; set; }
         [DisplayName("Local")]
         [StringLength(100, ErrorMessage = "O local da sessão precisa ter no mínimo 5 caracteres", MinimumLength = 5)]
         [Required(ErrorMessage = "Informe o local da sessão")]
