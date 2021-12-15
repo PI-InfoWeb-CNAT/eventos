@@ -32,7 +32,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Logo)
+            <div class="panel-body">
+                <img src="@Url.Action("GetLogo", "Eventos", new { id = Model.EventoId })"
+                     style="display:block;margin-left:auto; margin-right:auto;" />
+            </div>
         </dd>
 
         <dt>
@@ -40,7 +43,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Banner)
+            <div class="panel-body">
+                <img src="@Url.Action("GetBanner", "Eventos", new { id = Model.EventoId })"
+                     style="display:block;margin-left:auto; margin-right:auto;" />
+            </div>
         </dd>
 
         <dt>
