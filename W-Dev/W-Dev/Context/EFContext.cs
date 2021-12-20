@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using W_Dev.Models;
+using W_Dev.Areas.Eventos.Models;
+using W_Dev.Areas.Sessao.Models;
 
 
 namespace W_Dev.Context

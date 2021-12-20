@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace W_Dev.Models
+namespace W_Dev.Areas.Eventos.Models
 {
     public class Evento
     {

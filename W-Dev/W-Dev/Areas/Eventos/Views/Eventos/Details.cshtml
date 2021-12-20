@@ -1,0 +1,81 @@
+﻿@model W_Dev.Areas.Eventos.Models.Evento
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<section id="conteudo">
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instagram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instagram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            <div class="panel-body">
+                <img src="@Url.Action("GetLogo", "Eventos", new { id = Model.EventoId })"
+                     style="display:block;margin-left:auto; margin-right:auto;" />
+            </div>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banner)
+        </dt>
+
+        <dd>
+            <div class="panel-body">
+                <img src="@Url.Action("GetBanner", "Eventos", new { id = Model.EventoId })"
+                     style="display:block;margin-left:auto; margin-right:auto;" />
+            </div>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFinal)
+        </dd>
+
+    </dl>
+</section>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

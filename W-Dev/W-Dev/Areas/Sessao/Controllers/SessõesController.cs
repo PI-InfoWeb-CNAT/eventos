@@ -6,9 +6,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using W_Dev.Context;
-using W_Dev.Models;
+using W_Dev.Areas.Sessao.Models;
 
-namespace W_Dev.Controllers
+namespace W_Dev.Areas.Sessao.Controllers
 {
     public class SessõesController : Controller
     {

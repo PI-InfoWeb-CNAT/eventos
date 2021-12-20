@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using W_Dev.Context;
-using W_Dev.Models;
+using W_Dev.Areas.Eventos.Models;
 
 namespace W_Dev.DAL
 {

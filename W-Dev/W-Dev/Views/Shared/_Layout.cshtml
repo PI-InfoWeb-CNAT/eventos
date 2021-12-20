@@ -25,7 +25,7 @@
             <li><a class="menuLateral" href="gerenciarPalestrantes.html">Palestrantes</a></li>
             <li><a class="menuLateral" id="aDestaque" href="#">Programação</a></li>
             <li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>-->
-            <li id="liProgramação" class="menuLateral" role="presentation">@Html.ActionLink("Programação", "Index", "Sessões")</li>
+            <li id="liProgramação" class="menuLateral" role="presentation">@Html.ActionLink("Programação", "Index", "Sessões", new { Area = "Sessao" }, null)</li>
         </ul>
     </nav>
     <!--MENU SUPERIOR-->
@@ -36,7 +36,7 @@
                 <a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-config.png" id="configuracao"></a>
                 <ul>
                     <li><a href="#">Configurações:</a></li>
-                    <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos")</li>
+                    <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos", new { Area = "Eventos" }, null)</li>
                 </ul>
             </li>
             <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-sair.png" id="saida"></a></li>

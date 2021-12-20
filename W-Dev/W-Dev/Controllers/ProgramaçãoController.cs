@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using W_Dev.Models;
+using W_Dev.Areas.Sessao.Models;
 using W_Dev.Context;
 
 namespace W_Dev.Controllers

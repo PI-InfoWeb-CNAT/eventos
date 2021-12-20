@@ -1,0 +1,69 @@
+﻿@model IEnumerable<W_Dev.Areas.Eventos.Models.Evento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="conteudo">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instagram)
+            </th>
+            <!--<th>
+                Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th>
+                Html.DisplayNameFor(model => model.Banner)
+            </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.Dias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFinal)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instagram)
+                </td>
+                <!--<td>
+                    Html.DisplayFor(modelItem => item.Logo)
+                </td>
+                <td>
+                    Html.DisplayFor(modelItem => item.Banner)
+                </td>-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFinal)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EventoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.EventoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EventoId })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>@Html.ActionLink("Create New", "Create")</p>
+</section>

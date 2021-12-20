@@ -6,11 +6,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using W_Dev.Context;
-using W_Dev.Models;
+using W_Dev.Areas.Eventos.Models;
 using W_Dev.DAL;
 using System.IO;
 
-namespace W_Dev.Controllers
+namespace W_Dev.Areas.Eventos.Controllers
 {
     public class EventosController : Controller
     {
