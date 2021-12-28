@@ -255,6 +255,8 @@
     <Content Include="Areas\Sessao\Views\Sessões\Delete.cshtml" />
     <Content Include="Areas\Seguranca\Views\web.config" />
     <Content Include="Areas\Seguranca\Views\Adm\Index.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Adm\Create.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Adm\Edit.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Imagens\editar.png" />
     <Content Include="Imagens\icone-adicionar %282%29.png" />
@@ -332,6 +334,7 @@
     <Compile Include="Areas\Eventos\Models\Evento.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdmController.cs" />
     <Compile Include="Areas\Seguranca\Models\Usuario.cs" />
+    <Compile Include="Areas\Seguranca\Models\UsuarioViewModel.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Sessao\Controllers\SessõesController.cs" />
     <Compile Include="Areas\Sessao\Models\Sessão.cs" />
