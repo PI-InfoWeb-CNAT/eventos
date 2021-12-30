@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using W_Dev.Areas.Eventos.Models;
 using W_Dev.Areas.Sessao.Models;
+using W_Dev.Areas.Seguranca.Models;
 
 
 namespace W_Dev.Context
@@ -16,5 +17,6 @@ namespace W_Dev.Context
         }
         public DbSet<Sessão> Sessões { get; set; }
         public DbSet<Evento> Eventos { get; set; }
+        public DbSet<UsuarioDados> Dados { get; set; } 
     }
 }

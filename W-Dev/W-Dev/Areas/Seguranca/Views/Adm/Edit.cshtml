@@ -1,4 +1,4 @@
-﻿@model W_Dev.Areas.Seguranca.Models.UsuarioViewModel
+﻿@model W_Dev.Areas.Seguranca.Models.UsuarioDados
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Alterando dados de um NOVO USUÁRIO";
@@ -19,30 +19,31 @@
                         @Html.ValidationSummary(false, "Verifique os seguintes erros: ")
                     </div>
                 }
+                @Html.HiddenFor(model => model.DadosId)
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Nome, htmlAttributes:
-                    new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Usuario.Nome, htmlAttributes:
+                    new { @class = "control-label col-md-2" });
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Nome, new
+                        @Html.EditorFor(model => model.Usuario.Nome, new
                         {
                             htmlAttributes =
                         new { @class = "form-control" }
                         })
-                        @Html.ValidationMessageFor(model => model.Nome, "",
+                        @Html.ValidationMessageFor(model => model.Usuario.Nome, "",
                         new { @class = "text-danger" })
 
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Email, htmlAttributes:
-                    new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Usuario.Email, htmlAttributes:
+                    new { @class = "control-label col-md-2" });
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Email, new
+                        @Html.EditorFor(model => model.Usuario.Email, new
                         {
                             htmlAttributes =
                         new { @class = "form-control" }
                         })
-                        @Html.ValidationMessageFor(model => model.Email, "",
+                        @Html.ValidationMessageFor(model => model.Usuario.Email, "",
                         new { @class = "text-danger" }
                         )
                     </div>
@@ -75,12 +76,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Senha, htmlAttributes:
+                    @Html.LabelFor(model => model.Usuario.Senha, htmlAttributes:
                     new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.PasswordFor(model => model.Senha,
+                        @Html.PasswordFor(model => model.Usuario.Senha,
                         new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Senha, "",
+                        @Html.ValidationMessageFor(model => model.Usuario.Senha, "",
                         new { @class = "text-danger" })
                     </div>
                 </div>

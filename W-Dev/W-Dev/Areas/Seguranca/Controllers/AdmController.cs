@@ -7,18 +7,36 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using W_Dev.Areas.Seguranca.Models;
+using W_Dev.DAL;
 using W_Dev.Infraestrutura;
 
 namespace W_Dev.Areas.Seguranca.Controllers
 {
     public class AdmController : Controller
     {
+        UsuariosDAL usuariosDAL = new UsuariosDAL();
         // Definição da Propriedade GerenciadorUsuario
         private GerenciadorUsuario GerenciadorUsuario
         {
             get
             {
                 return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
+            }
+        }
+        private ActionResult GravarDados(UsuarioDados dados)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    usuariosDAL.GravarDados(dados);
+                    return RedirectToAction("Index");
+                }
+                return View(dados);
+            }
+            catch
+            {
+                return View(dados);
             }
         }
         // GET: Seguranca/Admin
@@ -72,7 +90,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
             }
             // inicia o objeto usuário para visão
             var uvm = new UsuarioViewModel();
-            uvm.Id = usuario.Id;
+            uvm.UsuarioId = usuario.Id;
             uvm.Nome = usuario.UserName;
             uvm.Email = usuario.Email;
             return View(uvm);
@@ -82,7 +100,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
         {
             if (ModelState.IsValid)
             {
-                Usuario usuario = GerenciadorUsuario.FindById(uvm.Id);
+                Usuario usuario = GerenciadorUsuario.FindById(uvm.UsuarioId);
                 usuario.UserName = uvm.Nome;
                 usuario.Email = uvm.Email;
                 usuario.PasswordHash = GerenciadorUsuario.PasswordHasher.

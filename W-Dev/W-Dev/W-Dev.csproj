@@ -334,6 +334,7 @@
     <Compile Include="Areas\Eventos\Models\Evento.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdmController.cs" />
     <Compile Include="Areas\Seguranca\Models\Usuario.cs" />
+    <Compile Include="Areas\Seguranca\Models\UsuarioDados.cs" />
     <Compile Include="Areas\Seguranca\Models\UsuarioViewModel.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Sessao\Controllers\SessõesController.cs" />
@@ -344,6 +345,7 @@
     <Compile Include="DAL\EventosDAL.cs" />
     <Compile Include="DAL\IdentityDbContext.cs" />
     <Compile Include="DAL\SessoesDAL.cs" />
+    <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
