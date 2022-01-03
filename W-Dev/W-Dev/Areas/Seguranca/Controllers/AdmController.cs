@@ -56,7 +56,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Create(UsuarioViewModel model)
+        public ActionResult Create(UsuarioViewModel model ,UsuarioDados dados)
         {
             if (ModelState.IsValid)
             {
@@ -74,6 +74,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 {
                     AddErrorsFromResult(result);
                 }
+                    return GravarDados(dados);
             }
             return View(model);
         }
