@@ -65,6 +65,12 @@ namespace W_Dev.Areas.Seguranca.Controllers
                     UserName = model.Nome,
                     Email = model.Email
                 };
+                UsuarioDados usuario  = new UsuarioDados
+                {
+                    CPF = model.CPF,
+                    Matricula = model.Matricula
+                };
+                GravarDados(dados);
                 IdentityResult result = GerenciadorUsuario.Create(user, model.Senha);
                 if (result.Succeeded)
                 {
