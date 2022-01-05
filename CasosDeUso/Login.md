@@ -28,7 +28,7 @@ O sistema deve realizar a autenticação do usuário de forma rápida.
 |:---------|:------|
 |1. O usuário acessa o sistema..| |
 | | 2. O sistema solicita o email e a senha do usuário.
-|3. O usuário preenche as informações solicitadas.| |
+|3. O usuário preenche as informações solicitadas e seleciona "login".| |
 | |4. O sistema realiza a autenticação do usuário.|
 |5. O usuário visualiza a página inicial..| |
 
@@ -37,13 +37,11 @@ O sistema deve realizar a autenticação do usuário de forma rápida.
 |:---------|:------|
 |1. O usuário acessa o sistema..| |
 | | 2. O sistema solicita o email e a senha do usuário.|
-|3. O usuário preenche as informações solicitadas com dados inválidos.| |
+|3. O usuário preenche as informações solicitadas com dados que não constam no sistema.| |
 | |4. O sistema solicita email e senha novamente.|
-|5. O usuário preenche as informações solicitadas.| |
+|5. O usuário preenche as informações solicitadas corretamente e seleciona "login".| |
 | |6. O sistema realiza a autenticação do usuário.|
 |7. O usuário visualiza a página inicial.| |
 
 ### 6. Protótipo(s) de interface do caso de uso
-![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos.png)
-
-![Pagina de Eventos2](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos2.png)
+![Login](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Home.png)
