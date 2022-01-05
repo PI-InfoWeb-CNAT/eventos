@@ -6,7 +6,7 @@
 
 |   Data   | Versão|   Descrição  |        Autor              |
 |:---------|:------|:-------------|:--------------------------|
-|05/01/2021|  1.0  |Versão inicial| Marina Medeiros           | 
+|05/01/2022|  1.0  |Versão inicial| Marina Medeiros           | 
 
 
 ### 1. Resumo
