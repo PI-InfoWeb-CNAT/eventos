@@ -262,3 +262,4 @@ C:\Users\Junior\Desktop\W-Dev\eventos\W-Dev\W-Dev\bin\Microsoft.Owin.Security.xm
 C:\Users\Junior\Desktop\W-Dev\eventos\W-Dev\W-Dev\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Junior\Desktop\W-Dev\eventos\W-Dev\W-Dev\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Junior\Desktop\W-Dev\eventos\W-Dev\W-Dev\bin\Newtonsoft.Json.xml
+C:\Users\Junior\Desktop\W-Dev\eventos\W-Dev\W-Dev\obj\Debug\W-Dev.csproj.AssemblyReference.cache

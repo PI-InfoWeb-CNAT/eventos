@@ -13,15 +13,19 @@ namespace W_Dev.DAL
             EFContext context = new EFContext();
             public IQueryable<UsuarioDados> ObterDadosClassificadosPorId()
             {
-                return context.Dados.OrderBy(d => d.DadosId);
+                return context.Dados.OrderBy(d => d.UsuarioDadosId);
             }
             public UsuarioDados ObterDadosPorId(long id)
             {
-                return context.Dados.Where(g => g.DadosId == id).First();
+                return context.Dados.Where(g => g.UsuarioDadosId == id).First();
             }
-            public void GravarDados(UsuarioDados dados)
+        public UsuarioDados ObterDadosPorNome(string nome)
+        {
+            return context.Dados.Where(g => g.Nome == nome).First();
+        }
+        public void GravarDados(UsuarioDados dados)
             {
-                if (dados.DadosId == 0)
+                if (dados.UsuarioDadosId == 0)
                 {
                     context.Dados.Add(dados);
                 }

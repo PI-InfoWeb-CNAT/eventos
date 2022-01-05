@@ -8,17 +8,17 @@ namespace W_Dev.Areas.Seguranca.Models
 {
     public class UsuarioDados
     {
-        public int DadosId { get; set; }
+        public int UsuarioDadosId { get; set; }
         [Required]
-        /*public string Nome { get; set; }
+        public string Nome { get; set; }
         [Required]
-        public string Email { get; set; }
+        /*public string Email { get; set; }
         [Required]
         public string Senha { get; set; }*/
         public string Matricula { get; set; }
         [Required]
         public string CPF { get; set; }
-        public UsuarioViewModel Usuario { get; set; }
+        // public UsuarioViewModel Usuario { get; set; }
         // public string UsuarioId { get; set; }
         //public virtual ICollection<UsuarioViewModel> Usuario { get; set; }
     }

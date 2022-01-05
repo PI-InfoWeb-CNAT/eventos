@@ -56,7 +56,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Create(UsuarioViewModel model ,UsuarioDados dados)
+        public ActionResult Create(UsuarioViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -68,19 +68,19 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 UsuarioDados usuario  = new UsuarioDados
                 {
                     CPF = model.CPF,
-                    Matricula = model.Matricula
+                    Matricula = model.Matricula,
+                    Nome = model.Nome
                 };
-                GravarDados(dados);
                 IdentityResult result = GerenciadorUsuario.Create(user, model.Senha);
                 if (result.Succeeded)
                 {
+                    GravarDados(usuario);
                     return RedirectToAction("Index");
                 }
                 else
                 {
                     AddErrorsFromResult(result);
                 }
-                    return GravarDados(dados);
             }
             return View(model);
         }
@@ -100,6 +100,9 @@ namespace W_Dev.Areas.Seguranca.Controllers
             uvm.UsuarioId = usuario.Id;
             uvm.Nome = usuario.UserName;
             uvm.Email = usuario.Email;
+            UsuarioDados usuarioDados = usuariosDAL.ObterDadosPorNome(uvm.Nome);
+            uvm.Matricula = usuarioDados.Matricula;
+            uvm.CPF = usuarioDados.CPF;
             return View(uvm);
         }
         [HttpPost]
@@ -110,15 +113,68 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 Usuario usuario = GerenciadorUsuario.FindById(uvm.UsuarioId);
                 usuario.UserName = uvm.Nome;
                 usuario.Email = uvm.Email;
+                UsuarioDados usuarioDados = usuariosDAL.ObterDadosPorNome(uvm.Nome);
+                usuarioDados.Matricula = uvm.Matricula;
+                usuarioDados.CPF = uvm.CPF;
                 usuario.PasswordHash = GerenciadorUsuario.PasswordHasher.
                 HashPassword(uvm.Senha);
                 IdentityResult result = GerenciadorUsuario.Update(usuario);
                 if (result.Succeeded)
-                { return RedirectToAction("Index"); }
+                {
+                    GravarDados(usuarioDados);
+                    return RedirectToAction("Index"); 
+                }
                 else
                 { AddErrorsFromResult(result); }
             }
             return View(uvm);
         }
-    }
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+            UsuarioDados usuarioDados = usuariosDAL.ObterDadosPorNome(id);
+            if (usuario == null && usuarioDados == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+        [HttpPost]
+        public ActionResult Delete(Usuario usuario)
+        {
+            Usuario user = GerenciadorUsuario.FindById(usuario.Id);
+            UsuarioDados dados = usuariosDAL.ObterDadosPorNome(usuario.Id);
+            if (user != null && dados != null)
+            {
+                IdentityResult result = GerenciadorUsuario.Delete(user);
+                if (result.Succeeded)
+                {
+                    try
+                    {
+                        UsuarioDados usuarioDados = usuariosDAL.EliminarUsuariosPorId(dados.UsuarioDadosId);
+                        TempData["Message"] = "Usuario " + usuarioDados.Nome.ToUpper() + " foi removido";
+                        return RedirectToAction("Index");
+                    }
+                    catch
+                    {
+                        return View();
+                    }
+                }
+                return RedirectToAction("Index");
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(
+                    HttpStatusCode.BadRequest);
+                }
+            }
+            else
+            {
+                return HttpNotFound();
+            }
 }
