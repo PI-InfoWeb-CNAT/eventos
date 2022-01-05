@@ -27,7 +27,7 @@ O sistema deve realizar o cadastro do usuário de forma rápida.
 |:---------|:------|
 |1. O usuário acessa o sistema.| |
 | | 2. O sistema solicita e-mail, nome, CPF, matrícula, senha e confirmação de senha do usuário|
-|3. O usuário preenche as informações solicitadas.| |
+|3. O usuário preenche as informações solicitadas e seleciona "cadastrar".| |
 | |4. O sistema realiza o cadastro do usuário.|
 |5. O usuário visualiza a página inicial.| |
 
@@ -36,13 +36,23 @@ O sistema deve realizar o cadastro do usuário de forma rápida.
 |:---------|:------|
 |1. O usuário acessa o sistema.| |
 | | 2. O sistema solicita e-mail, nome, CPF, matrícula, senha e confirmação de senha do usuário|
-|3. O usuário preenche as informações solicitadas com dados inválidos.| |
-| |4. O sistema solicita  e-mail, nome, CPF, matrícula, senha e confirmação de senha do usuário novamente.|
-|5. O usuário preenche as informações solicitadas.| |
+|3. O usuário preenche os campos de CPF, email ou matrícula com dados inválidos.| |
+| |4. O sistema alerta o usuário que os dados são inválidos.|
+|5. O usuário preenche os campos de CPF, email ou matrícula com dados válidos e seleciona "cadastrar".| |
+| |6. O sistema realiza o cadastro do usuário.|
+|7. O usuário visualiza a página inicial.| |
+
+### *5.2 Fluxo de exceção 1 - Caracteres insuficientes*
+|   Ator   | Sistema |
+|:---------|:------|
+|1. O usuário acessa o sistema.| |
+| | 2. O sistema solicita e-mail, nome, CPF, matrícula, senha e confirmação de senha do usuário|
+|3. O usuário preenche os campos solicitados com dados que contém caracteres insuficientes| |
+| |4. O sistema alerta o usuário que os dados são inválidos.|
+|5. O usuário preencheos campos solicitados com dados válidos e seleciona "cadastrar".| |
 | |6. O sistema realiza o cadastro do usuário.|
 |7. O usuário visualiza a página inicial.| |
 
 ### 6. Protótipo(s) de interface do caso de uso
-![Pagina de Eventos](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos.png)
+![Cadastrar](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Cadastro.png)
 
-![Pagina de Eventos2](https://github.com/PI-InfoWeb-CNAT/eventos/blob/main/CasosDeUso/Pagina%20de%20Eventos2.png)
