@@ -23,6 +23,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
             }
         }
+        [Authorize]
         private ActionResult GravarDados(UsuarioDados dados)
         {
             try
@@ -65,7 +66,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
                     UserName = model.Nome,
                     Email = model.Email
                 };
-                UsuarioDados usuario  = new UsuarioDados
+                UsuarioDados usuario = new UsuarioDados
                 {
                     CPF = model.CPF,
                     Matricula = model.Matricula,
@@ -122,14 +123,14 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 if (result.Succeeded)
                 {
                     GravarDados(usuarioDados);
-                    return RedirectToAction("Index"); 
+                    return RedirectToAction("Index");
                 }
                 else
                 { AddErrorsFromResult(result); }
             }
             return View(uvm);
         }
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id, string nome)
         {
             if (id == null)
             {
@@ -137,7 +138,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 HttpStatusCode.BadRequest);
             }
             Usuario usuario = GerenciadorUsuario.FindById(id);
-            UsuarioDados usuarioDados = usuariosDAL.ObterDadosPorNome(id);
+            UsuarioDados usuarioDados = usuariosDAL.ObterDadosPorNome(nome);
             if (usuario == null && usuarioDados == null)
             {
                 return HttpNotFound();
@@ -145,10 +146,10 @@ namespace W_Dev.Areas.Seguranca.Controllers
             return View(usuario);
         }
         [HttpPost]
-        public ActionResult Delete(Usuario usuario)
+        public ActionResult Delete(Usuario usuario, UsuarioDados usuarioDados)
         {
             Usuario user = GerenciadorUsuario.FindById(usuario.Id);
-            UsuarioDados dados = usuariosDAL.ObterDadosPorNome(usuario.Id);
+            UsuarioDados dados = usuariosDAL.ObterDadosPorNome(usuarioDados.Nome);
             if (user != null && dados != null)
             {
                 IdentityResult result = GerenciadorUsuario.Delete(user);
@@ -156,8 +157,8 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 {
                     try
                     {
-                        UsuarioDados usuarioDados = usuariosDAL.EliminarUsuariosPorId(dados.UsuarioDadosId);
-                        TempData["Message"] = "Usuario " + usuarioDados.Nome.ToUpper() + " foi removido";
+                        UsuarioDados usuarioDadoss = usuariosDAL.EliminarUsuariosPorId(dados.UsuarioDadosId);
+                        TempData["Message"] = "Usuario " + usuarioDadoss.Nome.ToUpper() + " foi removido";
                         return RedirectToAction("Index");
                     }
                     catch
@@ -166,15 +167,12 @@ namespace W_Dev.Areas.Seguranca.Controllers
                     }
                 }
                 return RedirectToAction("Index");
-                }
-                else
-                {
-                    return new HttpStatusCodeResult(
-                    HttpStatusCode.BadRequest);
-                }
             }
             else
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
             }
+        }
+    }
 }

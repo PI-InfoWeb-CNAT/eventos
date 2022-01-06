@@ -21,7 +21,7 @@ namespace W_Dev.DAL
             }
         public UsuarioDados ObterDadosPorNome(string nome)
         {
-            return context.Dados.Where(g => g.Nome == nome).First();
+            return context.Dados.Where(j => j.Nome == nome).First();
         }
         public void GravarDados(UsuarioDados dados)
             {

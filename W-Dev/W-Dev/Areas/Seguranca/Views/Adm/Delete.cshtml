@@ -1,0 +1,131 @@
+﻿@model W_Dev.Areas.Seguranca.Models.UsuarioViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Visualizando detalhes de um USUÁRIO";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Visualizando detalhes do USUÁRIO a ser removido
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            @Html.LabelFor(model => model.UsuarioId)<br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                @Html.EditorFor(model => model.UsuarioId, new
+                {
+                    htmlAttributes =
+                new { @class = "form-control", disabled = "disabled" }
+                })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome)<br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                @Html.EditorFor(model => model.Nome, new
+                {
+                    htmlAttributes =
+                new { @class = "form-control", disabled = "disabled" }
+                })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)<br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                @Html.EditorFor(model => model.Email, new
+                {
+                    htmlAttributes =
+                new { @class = "form-control", disabled = "disabled" }
+                })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CPF)<br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                @Html.EditorFor(model => model.CPF, new
+                {
+                    htmlAttributes =
+                new { @class = "form-control", disabled = "disabled" }
+                })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Matricula)<br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                @Html.EditorFor(model => model.Matricula, new
+                {
+                    htmlAttributes =
+                new { @class = "form-control", disabled = "disabled" }
+                })
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer panel-info">
+        <a href="#" class="btn btn-info" data-toggle="modal"
+           data-target="#deleteConfirmationModal">Remover</a>
+        @Html.ActionLink("Retornar para a listagem", "Index", null,
+        new { @class = "btn btn-info" })
+    </div>
+</div>
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1"
+     role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    Confirmação de exclusão de usuário
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Você está prestes a remover o usuário @Model.UsuarioId.ToUpper()
+                    do cadastro.
+                </p>
+                <p>
+                    <strong>
+                        Você está certo que deseja prosseguir?
+                    </strong>
+                </p>
+                @using (Html.BeginForm("Delete", "Admin", FormMethod.Post,
+                new { @id = "delete-form", role = "form" }))
+                {
+                    @Html.HiddenFor(m => m.UsuarioId)
+                    @Html.AntiForgeryToken()
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        onclick="$('#delete-form').submit();">
+                    Sim, exclua este usuário.
+                </button>
+                <button type="button" class="btn btn-primary"
+                        data-dismiss="modal">
+                    Não, não exclua este usuário.
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
