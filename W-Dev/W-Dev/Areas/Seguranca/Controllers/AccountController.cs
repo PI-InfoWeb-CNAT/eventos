@@ -53,8 +53,10 @@ namespace W_Dev.Areas.Seguranca.Controllers
                     AuthManager.SignOut();
                     AuthManager.SignIn(new AuthenticationProperties
                     { IsPersistent = false }, ident);
-                    if (returnUrl == null)
-                        return RedirectToAction("/Index/Eventos", new { Areas = "Eventos" });
+                    if(returnUrl == null){
+                        returnUrl = "~/Areas/Eventos/Eventos/Views/Index";
+                        return Redirect("~/Sessao/Sessões/Index");
+                    }
                 }
             }
             return View(details);
