@@ -26,6 +26,7 @@ namespace W_Dev.Areas.Seguranca.Models
     {
         [Required]
         public string Email { get; set; }
+        public string Nome { get; set; }
         [Required]
         public string Senha { get; set; }
     }

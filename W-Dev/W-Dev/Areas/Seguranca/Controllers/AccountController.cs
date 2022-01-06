@@ -41,19 +41,20 @@ namespace W_Dev.Areas.Seguranca.Controllers
         {
             if (ModelState.IsValid)
             {
-                Usuario user = UserManager.Find(details.Email, details.Senha);
-                if (user == null)
+                Usuario user = UserManager.FindByEmail(details.Email);
+                if (user == null )
                 {
                     ModelState.AddModelError("", "E-Mail ou senha inválido(s).");
                 }
                 else
                 {
-                    ClaimsIdentity ident = UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    ClaimsIdentity ident = UserManager.CreateIdentity(user,
+                    DefaultAuthenticationTypes.ApplicationCookie);
                     AuthManager.SignOut();
-                    AuthManager.SignIn(new AuthenticationProperties{ IsPersistent = false }, ident);
+                    AuthManager.SignIn(new AuthenticationProperties
+                    { IsPersistent = false }, ident);
                     if (returnUrl == null)
-                        returnUrl = "/Home";
-                    return Redirect(returnUrl);
+                        return RedirectToAction("/Index/Eventos", new { Areas = "Eventos" });
                 }
             }
             return View(details);
