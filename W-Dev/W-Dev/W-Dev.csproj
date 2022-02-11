@@ -262,6 +262,8 @@
     <Content Include="Areas\Seguranca\Views\PapelAdm\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdm\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdm\Edit.cshtml" />
+    <Content Include="Areas\Inscricao\Views\web.config" />
+    <Content Include="Areas\Checkin\Views\web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Imagens\editar.png" />
     <Content Include="Imagens\icone-adicionar %282%29.png" />
@@ -334,9 +336,15 @@
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Checkin\CheckinAreaRegistration.cs" />
+    <Compile Include="Areas\Checkin\Controllers\CheckinController.cs" />
+    <Compile Include="Areas\Checkin\Models\Checkin.cs" />
     <Compile Include="Areas\Eventos\EventosAreaRegistration.cs" />
     <Compile Include="Areas\Eventos\Controllers\EventosController.cs" />
     <Compile Include="Areas\Eventos\Models\Evento.cs" />
+    <Compile Include="Areas\Inscricao\Controllers\InscricaoController.cs" />
+    <Compile Include="Areas\Inscricao\InscricaoAreaRegistration.cs" />
+    <Compile Include="Areas\Inscricao\Models\Inscricao.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdmController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\PapelAdmController.cs" />
@@ -350,8 +358,10 @@
     <Compile Include="Areas\Sessao\SessaoAreaRegistration.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\ProgramaçãoController.cs" />
+    <Compile Include="DAL\CheckinDAL.cs" />
     <Compile Include="DAL\EventosDAL.cs" />
     <Compile Include="DAL\IdentityDbContext.cs" />
+    <Compile Include="DAL\InscricaoDAL.cs" />
     <Compile Include="DAL\SessoesDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Global.asax.cs">
@@ -389,13 +399,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Checkin\Data\" />
+    <Folder Include="Areas\Checkin\Views\Checkin\" />
+    <Folder Include="Areas\Checkin\Views\Shared\" />
     <Folder Include="Areas\Eventos\Data\" />
     <Folder Include="Areas\Eventos\Views\Shared\" />
+    <Folder Include="Areas\Inscricao\Data\" />
+    <Folder Include="Areas\Inscricao\Views\Inscricao\" />
+    <Folder Include="Areas\Inscricao\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Data\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Sessao\Data\" />
     <Folder Include="Areas\Sessao\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Inscricao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

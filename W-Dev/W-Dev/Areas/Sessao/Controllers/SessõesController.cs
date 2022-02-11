@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using W_Dev.Context;
 using W_Dev.Areas.Sessao.Models;
+using W_Dev.DAL;
 
 namespace W_Dev.Areas.Sessao.Controllers
 {
@@ -14,7 +15,54 @@ namespace W_Dev.Areas.Sessao.Controllers
     {
         // GET: Sessões
         private EFContext context = new EFContext();
+        EventosDAL eventosDal = new EventosDAL();
+        SessoesDAL sessoesDal = new SessoesDAL();
         // GET: Fabricantes
+        private ActionResult ObterVisaoSessoesPorId(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Sessão sessão = sessoesDal.ObterSessoesPorId((long)id);
+            if (sessão == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sessão);
+        }
+        private void PopularViewBag(Sessão sessão = null)
+        {
+            if (sessão == null)
+            {
+                ViewBag.EventoId = new SelectList(eventosDal.ObterEventosClassificadosPorNome(),
+                "EventoId", "Nome");
+            }
+            else
+            {
+                ViewBag.EventoId = new SelectList(eventosDal.ObterEventosClassificadosPorNome(),
+               "EventoId", "Nome", sessão.EventoId);
+            }
+        }
+        private ActionResult GravarSessoes(Sessão sessão)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    sessoesDal.GravarSessoes(sessão);
+                    return RedirectToAction("Index");
+                }
+                PopularViewBag(sessão);
+                return View(sessão);
+            }
+            catch
+            {
+                PopularViewBag(sessão);
+                return View(sessão);
+            }
+        }
         public ActionResult Index()
         {
             return View(context.Sessões.OrderBy(c => c.Titulo));
@@ -23,6 +71,7 @@ namespace W_Dev.Areas.Sessao.Controllers
         // GET: Create
         public ActionResult Create()
         {
+            PopularViewBag();
             return View();
         }
         // POST: Create
@@ -30,23 +79,13 @@ namespace W_Dev.Areas.Sessao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Sessão sessão)
         {
-            context.Sessões.Add(sessão);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            return GravarSessoes(sessão);
         }
         // GET: Fabricantes/Edit/5
         public ActionResult Edit(long? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Sessão sessão = context.Sessões.Find(id);
-            if (sessão == null)
-            {
-                return HttpNotFound();
-            }
-            return View(sessão);
+            PopularViewBag(sessoesDal.ObterSessoesPorId((long)id));
+            return ObterVisaoSessoesPorId(id);
         }
 
         // POST: Fabricantes/Edit/5
@@ -54,13 +93,7 @@ namespace W_Dev.Areas.Sessao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Sessão sessão)
         {
-            if (ModelState.IsValid)
-            {
-                context.Entry(sessão).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(sessão);
+            return GravarSessoes(sessão);
         }
         // GET: Fabricantes/Details/5
         public ActionResult Details(long? id)

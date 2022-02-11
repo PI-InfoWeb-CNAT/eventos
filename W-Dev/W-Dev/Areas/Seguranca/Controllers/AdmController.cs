@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using W_Dev.Areas.Seguranca.Models;
 using W_Dev.DAL;
 using W_Dev.Infraestrutura;
+using System.ComponentModel.DataAnnotations;
 
 namespace W_Dev.Areas.Seguranca.Controllers
 {
@@ -59,6 +60,7 @@ namespace W_Dev.Areas.Seguranca.Controllers
         [HttpPost]
         public ActionResult Create(UsuarioViewModel model)
         {
+            IdentityResult aresult;
             if (ModelState.IsValid)
             {
                 Usuario user = new Usuario
@@ -76,6 +78,10 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 if (result.Succeeded)
                 {
                     GravarDados(usuario);
+                    if(usuario.Matricula.Length == 14)
+                        aresult = GerenciadorUsuario.AddToRole(user.Id, "Aluno");
+                    else if ((usuario.Matricula.Length == 6)|| (usuario.Matricula.Length == 7))
+                        aresult = GerenciadorUsuario.AddToRole(user.Id, "Organizador");
                     return RedirectToAction("Index");
                 }
                 else

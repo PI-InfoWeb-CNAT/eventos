@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using W_Dev.Areas.Seguranca.Models;
@@ -78,7 +79,33 @@ namespace W_Dev.Areas.Seguranca.Controllers
                 NaoMembros = naoMembros
             });
         }
-
+        [HttpPost]
+        public ActionResult Edit(PapelModificationModel model)
+        {
+            IdentityResult result;
+            if (ModelState.IsValid)
+            {
+                foreach (string userId in model.IdsParaAdicionar ?? new
+                string[] { })
+                {
+                    result = UserManager.AddToRole(userId, model.NomePapel);
+                    if (!result.Succeeded)
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                }
+                foreach (string userId in model.IdsParaRemover ?? new string[] { })
+                {
+                    result = UserManager.RemoveFromRole(userId, model.NomePapel);
+                    if (!result.Succeeded)
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
 
     }
 }

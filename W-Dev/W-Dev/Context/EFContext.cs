@@ -17,6 +17,7 @@ namespace W_Dev.Context
         }
         public DbSet<Sessão> Sessões { get; set; }
         public DbSet<Evento> Eventos { get; set; }
-        public DbSet<UsuarioDados> Dados { get; set; } 
+        public DbSet<UsuarioDados> Dados { get; set; }
+        public IEnumerable<object> Inscricoes { get; internal set; }
     }
 }

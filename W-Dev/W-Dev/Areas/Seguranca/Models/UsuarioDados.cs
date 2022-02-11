@@ -18,6 +18,8 @@ namespace W_Dev.Areas.Seguranca.Models
         public string Matricula { get; set; }
         [Required]
         public string CPF { get; set; }
+        public string FotoMimeType { get; set; }
+        public byte[] Foto { get; set; }
         // public UsuarioViewModel Usuario { get; set; }
         // public string UsuarioId { get; set; }
         //public virtual ICollection<UsuarioViewModel> Usuario { get; set; }

@@ -21,7 +21,7 @@ namespace W_Dev.DAL
         }
         public void GravarSessoes(Sessão sessão)
         {
-            if (sessão.SessãoId == 0)
+            if (sessão.SessãoId is null)
             {
                 context.Sessões.Add(sessão);
             }
