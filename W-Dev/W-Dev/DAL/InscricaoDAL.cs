@@ -8,16 +8,20 @@ using System.Data.Entity;
 
 namespace W_Dev.DAL
 {
-    public class IscricaoDAL
+    public class InscricaoDAL
     {
         EFContext context = new EFContext();
-        public IQueryable<Inscricao> ObterInscricoesPorId(long id)
+        public IQueryable<Inscricao> ObterIncricoesClassificadosPorId()
         {
-            return context.Inscricoes.Where(j => j.InscricaoId == id).First();
+            return context.Inscricoes.OrderBy(b => b.InscricaoId);
+        }
+        public Inscricao ObterInscricoesPorId(long id)
+        {
+            return context.Inscricoes.Where(f => f.InscricaoId == id).First();
         }
         public void GravarInscricoes(Inscricao inscricao)
         {
-            if (inscricao.InscricaoId is null)
+            if (inscricao.InscricaoId == 0)
             {
                 context.Inscricoes.Add(inscricao);
             }
@@ -29,8 +33,8 @@ namespace W_Dev.DAL
         }
         public Inscricao EliminarInscricoesPorId(long id)
         {
-            Inscricao inscricao = ObterInscricaosPorId(id);
-            context.Sessões.Remove(inscricao);
+            Inscricao inscricao = ObterInscricoesPorId(id);
+            context.Inscricoes.Remove(inscricao);
             context.SaveChanges();
             return inscricao;
         }

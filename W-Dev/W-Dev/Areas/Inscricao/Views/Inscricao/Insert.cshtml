@@ -1,0 +1,47 @@
+﻿@model IEnumerable<W_Dev.Areas.Inscricao.Models.Inscricao>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioDadosId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eventos.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioDadosId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InscricaoId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.InscricaoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.InscricaoId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

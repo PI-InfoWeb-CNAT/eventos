@@ -1,0 +1,41 @@
+﻿@model IEnumerable<W_Dev.Areas.Inscricao.Models.Inscricao>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioDadosId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eventos.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioDadosId)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -6,7 +6,8 @@ using System.Web;
 using W_Dev.Areas.Eventos.Models;
 using W_Dev.Areas.Sessao.Models;
 using W_Dev.Areas.Seguranca.Models;
-
+using W_Dev.Areas.Inscricao.Models;
+using W_Dev.Areas.Checkin.Models;
 
 namespace W_Dev.Context
 {
@@ -18,6 +19,7 @@ namespace W_Dev.Context
         public DbSet<Sessão> Sessões { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<UsuarioDados> Dados { get; set; }
-        public IEnumerable<object> Inscricoes { get; internal set; }
+        public DbSet<Inscricao> Inscricoes { get; set; }
+        public DbSet<Checkin> Checkins { get; set; }
     }
 }

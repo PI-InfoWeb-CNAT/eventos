@@ -24,9 +24,7 @@ namespace W_Dev.Areas.Sessao.Models
         [Required(ErrorMessage = "Informe o local da sessão")]
         public string Local { get; set; }
         public int EventoId { get; set; }
-
         public Evento Eventos { get; set; }
 
     }
-
 }

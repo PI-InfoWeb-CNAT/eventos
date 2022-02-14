@@ -10,17 +10,21 @@ namespace W_Dev.DAL
 {
     public class CheckinDAL
     {
-            EFContext context = new EFContext();
-            public IQueryable<Checkin> ObterCheckinsPorId(long id)
+        EFContext context = new EFContext();
+        public IQueryable<Checkin> ObterCheckinsClassificadosPorId()
+        {
+            return context.Checkins.OrderBy(b => b.CheckinId);
+        }
+        public Checkin ObterCheckinsPorId(long id)
+        {
+            return context.Checkins.Where(f => f.CheckinId == id).First();
+        }
+        public void GravarCheckins(Checkin checkin)
+        {
+            if (checkin.CheckinId == 0)
             {
-                return context.Checkins.Where(j => j.CheckinId == id).First();
+            context.Checkins.Add(checkin);
             }
-            public void GravarCheckins(Checkin checkin)
-            {
-                if (checkin.CheckinId is null)
-                {
-                    context.Inscricoes.Add(checkin);
-                }
                 else
                 {
                     context.Entry(checkin).State = EntityState.Modified;
@@ -30,7 +34,7 @@ namespace W_Dev.DAL
             public Checkin EliminarCheckinsPorId(long id)
             {
                 Checkin checkin = ObterCheckinsPorId(id);
-                context.Sessões.Remove(checkin);
+                context.Checkins.Remove(checkin);
                 context.SaveChanges();
                 return checkin;
             }
