@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace W_Dev.Areas.Inscricao
+namespace W_Dev.Areas.Inscricoes
 {
-    public class InscricaoAreaRegistration : AreaRegistration 
+    public class InscricoesAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Inscricao";
+                return "Inscricoes";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Inscricao_default",
-                "Inscricao/{controller}/{action}/{id}",
+                "Inscricoes_default",
+                "Inscricoes/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

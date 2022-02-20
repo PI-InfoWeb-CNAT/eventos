@@ -4,18 +4,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using W_Dev.Areas.Inscricao.Models;
 using W_Dev.Areas.Eventos.Models;
-using W_Dev.Context;
+using W_Dev.Areas.Inscricoes.Models;
 using W_Dev.DAL;
 
-namespace W_Dev.Areas.Inscricao.Controllers
+namespace W_Dev.Areas.Inscricoes.Controllers
 {
-    public class InscricaoController : Controller
+    public class InscricoesController : Controller
     {
 
         InscricaoDAL inscricaoDAL = new InscricaoDAL();
         EventosDAL eventosDAL = new EventosDAL();
+        UsuariosDAL dados = new UsuariosDAL();
         // GET: Inscricao/Inscricao
         [Authorize(Roles = "Aluno")]
         private ActionResult ObterVisaoEventosPorId(long? id)
@@ -31,15 +31,35 @@ namespace W_Dev.Areas.Inscricao.Controllers
             }
             return View(evento);
         }
+        private ActionResult GravarInscricoes(Inscricao inscricao)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    inscricaoDAL.GravarInscricoes(inscricao);
+                    return RedirectToAction("Insert");
+                }
+                return View(inscricao);
+            }
+            catch
+            {
+                return View(inscricao);
+            }
+        }
         [Authorize(Roles = "Organizador")]
         public ActionResult Index()
         {
-            return View(eventosDAL.ObterEventosClassificadosPorNome());
+            return View(inscricaoDAL.ObterInscritosClassificadoPorUsuario());
         }
         [Authorize(Roles = "Aluno")]
-        public ActionResult Insert(long? id)
+        public ActionResult Lista(long? id)
         {
             return ObterVisaoEventosPorId(id);
+        }
+        public ActionResult Insert(Inscricao inscricao)
+        {
+            return GravarInscricoes(inscricao);
         }
     }
 }

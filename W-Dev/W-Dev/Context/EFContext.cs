@@ -6,7 +6,7 @@ using System.Web;
 using W_Dev.Areas.Eventos.Models;
 using W_Dev.Areas.Sessao.Models;
 using W_Dev.Areas.Seguranca.Models;
-using W_Dev.Areas.Inscricao.Models;
+using W_Dev.Areas.Inscricoes.Models;
 using W_Dev.Areas.Checkin.Models;
 
 namespace W_Dev.Context
