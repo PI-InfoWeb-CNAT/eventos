@@ -48,10 +48,6 @@ namespace W_Dev.Areas.Certificados.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //if (chkRemoverImagem != null)
-                    //{
-                    //    evento.Logo = null;
-                    //}
                     if (cert != null)
                     {
                         certificado.CertMimeType = cert.ContentType;
@@ -69,7 +65,6 @@ namespace W_Dev.Areas.Certificados.Controllers
                 return View(certificado);
             }
         }
-
         // GET: Certificados/Certificados
         public ActionResult Index()
         {

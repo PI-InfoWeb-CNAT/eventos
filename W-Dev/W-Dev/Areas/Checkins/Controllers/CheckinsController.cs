@@ -44,7 +44,7 @@ namespace W_Dev.Areas.Checkins.Controllers
                 return View(checkin);
             }
         }
-        public ActionResult Insert()
+        public ActionResult Insert(long? SessaoId)
         {
             return View();
         }

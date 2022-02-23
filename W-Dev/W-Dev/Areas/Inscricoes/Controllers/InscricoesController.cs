@@ -52,9 +52,9 @@ namespace W_Dev.Areas.Inscricoes.Controllers
             return View(inscricaoDAL.ObterInscritosClassificadoPorUsuario());
         }
         [Authorize(Roles = "Aluno")]
-        public ActionResult Lista(long? id)
+        public ActionResult Lista()
         {
-            return ObterVisaoEventosPorId(id);
+            return View();
         }
         public ActionResult Insert()
         {
