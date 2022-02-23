@@ -17,7 +17,6 @@ namespace W_Dev.Areas.Inscricoes.Controllers
         EventosDAL eventosDAL = new EventosDAL();
         UsuariosDAL dados = new UsuariosDAL();
         // GET: Inscricao/Inscricao
-        [Authorize(Roles = "Aluno")]
         private ActionResult ObterVisaoEventosPorId(long? id)
         {
             if (id == null)
@@ -57,6 +56,12 @@ namespace W_Dev.Areas.Inscricoes.Controllers
         {
             return ObterVisaoEventosPorId(id);
         }
+        public ActionResult Insert()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Insert(Inscricao inscricao)
         {
             return GravarInscricoes(inscricao);

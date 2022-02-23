@@ -7,7 +7,8 @@ using W_Dev.Areas.Eventos.Models;
 using W_Dev.Areas.Sessao.Models;
 using W_Dev.Areas.Seguranca.Models;
 using W_Dev.Areas.Inscricoes.Models;
-using W_Dev.Areas.Checkin.Models;
+using W_Dev.Areas.Checkins.Models;
+using W_Dev.Areas.Certificados.Models;
 
 namespace W_Dev.Context
 {
@@ -21,5 +22,6 @@ namespace W_Dev.Context
         public DbSet<UsuarioDados> Dados { get; set; }
         public DbSet<Inscricao> Inscricoes { get; set; }
         public DbSet<Checkin> Checkins { get; set; }
+        public DbSet<Certificado> Certificados { get; set; }
     }
 }

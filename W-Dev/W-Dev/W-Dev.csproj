@@ -262,11 +262,12 @@
     <Content Include="Areas\Seguranca\Views\PapelAdm\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdm\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdm\Edit.cshtml" />
-    <Content Include="Areas\Checkin\Views\web.config" />
     <Content Include="Areas\Inscricoes\Views\web.config" />
     <Content Include="Areas\Inscricoes\Views\Inscricoes\Index.cshtml" />
     <Content Include="Areas\Inscricoes\Views\Inscricoes\Lista.cshtml" />
     <Content Include="Areas\Inscricoes\Views\Inscricoes\Insert.cshtml" />
+    <Content Include="Areas\Checkins\Views\web.config" />
+    <Content Include="Areas\Certificados\Views\web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Imagens\editar.png" />
     <Content Include="Imagens\icone-adicionar %282%29.png" />
@@ -339,9 +340,12 @@
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Checkin\CheckinAreaRegistration.cs" />
-    <Compile Include="Areas\Checkin\Controllers\CheckinController.cs" />
-    <Compile Include="Areas\Checkin\Models\Checkin.cs" />
+    <Compile Include="Areas\Certificados\Controllers\CertificadosController.cs" />
+    <Compile Include="Areas\Certificados\Models\Certificado.cs" />
+    <Compile Include="Areas\Certificados\CertificadosAreaRegistration.cs" />
+    <Compile Include="Areas\Checkins\CheckinsAreaRegistration.cs" />
+    <Compile Include="Areas\Checkins\Controllers\CheckinsController.cs" />
+    <Compile Include="Areas\Checkins\Models\Checkin.cs" />
     <Compile Include="Areas\Eventos\EventosAreaRegistration.cs" />
     <Compile Include="Areas\Eventos\Controllers\EventosController.cs" />
     <Compile Include="Areas\Eventos\Models\Evento.cs" />
@@ -361,6 +365,7 @@
     <Compile Include="Areas\Sessao\SessaoAreaRegistration.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\ProgramaçãoController.cs" />
+    <Compile Include="DAL\CertificadoDAL.cs" />
     <Compile Include="DAL\CheckinDAL.cs" />
     <Compile Include="DAL\EventosDAL.cs" />
     <Compile Include="DAL\IdentityDbContext.cs" />
@@ -402,9 +407,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Checkin\Data\" />
-    <Folder Include="Areas\Checkin\Views\Checkin\" />
-    <Folder Include="Areas\Checkin\Views\Shared\" />
+    <Folder Include="Areas\Certificados\Data\" />
+    <Folder Include="Areas\Certificados\Views\Certificados\" />
+    <Folder Include="Areas\Certificados\Views\Shared\" />
+    <Folder Include="Areas\Checkins\Data\" />
+    <Folder Include="Areas\Checkins\Views\Checkins\" />
+    <Folder Include="Areas\Checkins\Views\Shared\" />
     <Folder Include="Areas\Eventos\Data\" />
     <Folder Include="Areas\Eventos\Views\Shared\" />
     <Folder Include="Areas\Inscricoes\Data\" />
