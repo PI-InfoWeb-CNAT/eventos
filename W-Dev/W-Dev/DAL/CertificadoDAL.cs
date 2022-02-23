@@ -5,6 +5,7 @@ using System.Web;
 using W_Dev.Context;
 using W_Dev.Areas.Certificados.Models;
 using System.Data.Entity;
+using W_Dev.Areas.Sessao.Models;
 
 namespace W_Dev.DAL
 {
@@ -30,6 +31,16 @@ namespace W_Dev.DAL
                 context.Entry(certificado).State = EntityState.Modified;
             }
             context.SaveChanges();
+        }
+        public IQueryable<Sessão> ObterSessõesClassificadoPorCertificado()
+        {
+            IQueryable<Sessão> query;
+            query =
+            from sessao in context.Sessões
+            join certificado in context.Certificados on sessao.SessãoId equals certificado.SessãoId
+            //where dado.UsuarioDadosId == id
+            select sessao;
+            return query;
         }
         public Certificado EliminarSessoesPorId(long id)
         {

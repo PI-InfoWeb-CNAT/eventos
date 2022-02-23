@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using W_Dev.Areas.Certificados.Models;
 using W_Dev.Areas.Seguranca.Models;
 using W_Dev.Areas.Sessao.Models;
+using W_Dev.Areas.Checkins.Models;
 using W_Dev.DAL;
 
 namespace W_Dev.Areas.Certificados.Controllers
@@ -14,8 +15,10 @@ namespace W_Dev.Areas.Certificados.Controllers
     public class CertificadosController : Controller
     {
         CertificadoDAL certificadoDAL = new CertificadoDAL();
-        UsuarioDados dados = new UsuarioDados();
-        SessoesDAL sessoesDAL = new SessoesDAL();
+        UsuariosDAL usuariosDAL = new UsuariosDAL();
+        CheckinDAL checkinDAL = new CheckinDAL();
+        EventosDAL eventosDAL = new EventosDAL();
+        InscricaoDAL inscricaoDAL = new InscricaoDAL();
         private byte[] SetLogo(HttpPostedFileBase logo)
         {
             var bytesLogo = new byte[logo.ContentLength];
@@ -65,6 +68,12 @@ namespace W_Dev.Areas.Certificados.Controllers
                 return View(certificado);
             }
         }
+        /*private ActionResult SalvarDados(UsuarioDados dados)
+        {
+            var uvm = new UsuarioDados();
+            uvm.CPF = dados.CPF;
+            uvm.Nome = dados.Nome;
+        }*/
         // GET: Certificados/Certificados
         public ActionResult Index()
         {
@@ -81,6 +90,10 @@ namespace W_Dev.Areas.Certificados.Controllers
             return GravarCertificados(certificado, cert);
         }
         public ActionResult Details()
+        {
+            return View(inscricaoDAL.ObterInscritosClassificadosPorEventos());
+        }
+        public ActionResult Present()
         {
             return View();
         }

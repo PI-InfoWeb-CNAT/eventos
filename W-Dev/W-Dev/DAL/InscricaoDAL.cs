@@ -19,7 +19,6 @@ namespace W_Dev.DAL
         }
         public IQueryable<UsuarioDados> ObterInscritosClassificadoPorUsuario()
         {
-
             //return context.Dados.Select
             IQueryable <UsuarioDados> query; 
             query =  

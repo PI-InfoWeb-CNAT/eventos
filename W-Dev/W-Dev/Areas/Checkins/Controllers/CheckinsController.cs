@@ -44,9 +44,9 @@ namespace W_Dev.Areas.Checkins.Controllers
                 return View(checkin);
             }
         }
-        public ActionResult Insert(long? SessaoId)
+        public ActionResult Insert()
         {
-            return View();
+            return View(sessoesDAL.ObterSessoesClassificadosPorTitulo());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
