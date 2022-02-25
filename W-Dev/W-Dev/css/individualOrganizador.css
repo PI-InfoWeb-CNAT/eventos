@@ -1,4 +1,14 @@
-﻿/*=======================GERENCIAR ORGANIZADORES E PALESTRANTES========================*/
+﻿/*========================GERENCIAR INSCRITOS==========================================*/
+tabela#tabelaInscritos{
+    margin-left: 300px;
+    width: 70%
+}
+tr.tabelaInscritos{
+    margin: 0px;
+    margin-left: -50px;
+}
+
+/*=======================GERENCIAR ORGANIZADORES E PALESTRANTES========================*/
 /*~~~ BLOCOS DE PESSOA~~~~*/
 div.blocoPessoa {
     background-color: #75A2B0;

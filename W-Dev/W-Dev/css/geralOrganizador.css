@@ -43,7 +43,7 @@ nav#navLateral {
     background: #75A2B0;
 }
 
-a.menuLateral {
+li.menuLateral {
     text-decoration: none;
     display: block;
     height: 100%;
@@ -62,35 +62,61 @@ a.menuLateral {
 /*~~~~~MENU SUPERIOR~~~~~~~*/
 nav#navSuperior {
     display: inline;
+    float: right;
+    margin-right: 10px;
 }
 
 img.iconeSuperior {
     height: 30px;
 }
 
-ul.menu {
+.menu {
     list-style: none;
+    border: 1px solid #c0c0c0;
     float: left;
 }
+.menu li {
+   position: relative;
+   float: left;
+   border-right: 1px solid #c0c0c0;}
 
-ul.menu li {
-    position: relative;
-    float: left;
+.menu li a {
+  color: #333;
+   text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+        }
+
+menu li a:hover {
+   background: #333;
+   color: #fff;
+   text-shadow: 0px 0px 5px #fff;
 }
 
-ul.menu li a {
- color: #333;
- text-decoration: none;
- padding: 5px 10px;
- display: block;
+.menu li ul {
+    position: absolute;
+    top: 25px;
+    left: -10vw;
+    background-color: #fff;
+    display: none;
 }
 
-ul.menu li a:hover {
-  color: #fff;
-  text-shadow: 0px 0px 5px #fff;
+.menu li:hover ul, .menu li.over ul {
+    display: block;
+}
+
+.menu li ul li {
+    border: 1px solid #c0c0c0;
+    display: block;
+    width: 150px;
 }
 /*~~~~~CONTEÚDO~~~~~~~*/
 section#conteudo {
+    width: 70%;
+    margin-left: 300px;
+    margin-bottom: 10px;
+}
+section#conteudoEdit {
     width: 70%;
     margin-left: 300px;
     margin-bottom: 10px;

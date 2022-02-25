@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Insert";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/LayoutAluno.cshtml";
 }
 
 <!DOCTYPE html>
@@ -13,12 +13,17 @@
     <title>Insert</title>
 </head>
 <body>
+    <style>
+        body{
+            text-align: left;
+        }
+    </style>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         
         <div class="form-horizontal">
-            <h4>Inscricao</h4>
+            <h4>  Eventos disponíveis para inscrição</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.InscricaoId)
@@ -34,13 +39,9 @@
                 @Html.LabelFor(model => model.EventoId, "EventoId", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.ValidationMessageFor(model => model.EventoId, "", new { @class = "text-danger" })
+                    <input type="submit" value="Inscrever-se" class="btn btn-info" />
                 </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
+
             </div>
         </div>
     }

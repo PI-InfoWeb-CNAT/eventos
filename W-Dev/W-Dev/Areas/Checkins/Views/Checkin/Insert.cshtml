@@ -62,8 +62,8 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Local)
                             </td>
-                            <td><a href="paginainicial.html"><img src="~/Imagens/editar.png" alt="editar" class="inicorganizador"></a></td>
                             <td>
+                                <input type="checkbox" value="Save" />
                                 @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
                                 @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
                             </td>
@@ -115,8 +115,8 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Local)
                             </td>
-                            <td><a href="paginainicial.html"><img src="~/Imagens/editar.png" alt="editar" class="inicorganizador"></a></td>
                             <td>
+                                <input type="checkbox" value="save"/>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
                                 @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
                             </td>

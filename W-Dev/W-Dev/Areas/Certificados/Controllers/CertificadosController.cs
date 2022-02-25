@@ -68,11 +68,10 @@ namespace W_Dev.Areas.Certificados.Controllers
                 return View(certificado);
             }
         }
-        /*private ActionResult SalvarDados(UsuarioDados dados)
+        /*private ActionResult GravarHorario(Checkin checkin)
         {
-            var uvm = new UsuarioDados();
-            uvm.CPF = dados.CPF;
-            uvm.Nome = dados.Nome;
+            var hi = checkinDAL.ObterCheckinsClassificadosPorHorarioI();
+            var hf = checkinDAL.ObterCheckinsClassificadosPorHorarioF();
         }*/
         // GET: Certificados/Certificados
         public ActionResult Index()
@@ -93,9 +92,17 @@ namespace W_Dev.Areas.Certificados.Controllers
         {
             return View(inscricaoDAL.ObterInscritosClassificadosPorEventos());
         }
-        public ActionResult Present()
+        public ActionResult Present(UsuarioDados dados, Checkin checkin)
         {
-            return View();
+            Certificado certificado = new Certificado();
+            certificado.CPF = dados.CPF;
+            certificado.Nome = dados.Nome;
+            var h1 = checkin.HoraInicial;
+            var h2 = checkin.Horafinal;
+            TimeSpan horas = h2.Subtract(h1);
+            certificado.Horas = horas;
+
+            return View(certificado);
         }
 
     }

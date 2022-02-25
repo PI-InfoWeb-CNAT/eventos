@@ -25,6 +25,24 @@ namespace W_Dev.DAL
             select sessão;
             return query;
         }
+        public IQueryable<Sessão> ObterCheckinsClassificadosPorHorarioI()
+        {
+            IQueryable<Sessão> query;
+            query =
+            from sessão in context.Sessões
+            join checkins in context.Checkins on sessão.HoraInicial equals checkins.HoraInicial
+            select sessão;
+            return query;
+        }
+        public IQueryable<Sessão> ObterCheckinsClassificadosPorHorarioF()
+        {
+            IQueryable<Sessão> query;
+            query =
+            from sessão in context.Sessões
+            join checkins in context.Checkins on sessão.Horafinal equals checkins.Horafinal
+            select sessão;
+            return query;
+        }
         public Checkin ObterCheckinsPorId(long id)
         {
             return context.Checkins.Where(f => f.CheckinId == id).First();

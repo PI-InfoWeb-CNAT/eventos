@@ -61,5 +61,10 @@ namespace W_Dev.Areas.Seguranca.Controllers
             }
             return View(details);
         }
+        public ActionResult Logout()
+        {
+            AuthManager.SignOut();
+            return RedirectToAction("Index", "Login", new { area = "" });
+        }
     }
 }

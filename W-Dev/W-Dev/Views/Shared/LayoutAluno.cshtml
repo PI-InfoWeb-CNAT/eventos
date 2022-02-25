@@ -14,13 +14,12 @@
 <body>
     <header id="cabecalho">
         <img src="~/Imagens/Wdev_Logo.png" alt="Logo" id="logowdev">
-        <h1 id="tituloAba">Programação WTADS</h1>
         <!--MENU SUPERIOR-->
         <nav id="navSuperior">
             <ul class="menu">
-                <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-perfil.png"></a></li>
-                <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-certificado.png"></a></li>
-                <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-home.png"></a></li>
+                <li><p class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-perfil.png"></p></li>
+                <li><p class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-certificado.png"></p></li>
+                <li>@Html.ActionLink("Home", "Index", "Programação", null)"></li>
             </ul>
         </nav>
     </header>

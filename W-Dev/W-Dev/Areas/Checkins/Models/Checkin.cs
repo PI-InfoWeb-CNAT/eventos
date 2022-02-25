@@ -8,11 +8,15 @@ namespace W_Dev.Areas.Checkins.Models
 {
     public class Checkin
     {
-    public int CheckinId { get; set; }
+        public int CheckinId { get; set; }
 
-    public int SessãoId { get; set; }
+        public int SessãoId { get; set; }
 
-    public Sessão Sessoes { get; set; }
-        
+        public DateTime HoraInicial { get; set; }
+
+        public DateTime Horafinal { get; set; }
+
+        public Sessão Sessoes { get; set; }
+
     }
 }

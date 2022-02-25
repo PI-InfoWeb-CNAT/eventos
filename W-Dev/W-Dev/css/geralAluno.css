@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Antic', sans-serif;
+    text-align: left;
 }
 
 ::-webkit-scrollbar {
@@ -12,6 +13,18 @@ body {
 * {
     margin: 0px;
     padding: 0px;
+}
+/*=====EDITAR PERFIL===*/
+section#conteudoEdit {
+    width: 70%;
+    margin-left: 300px;
+    margin-bottom: 10px;
+}
+/*----INSCRIÇÃO NO EVENTO---*/
+div.divisao{
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px;
 }
 /*---------HEADER-----*/
 img#logowdev {

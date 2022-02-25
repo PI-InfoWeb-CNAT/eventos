@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 @using W_Dev.Infraestrutura
+@using W_Dev.Areas.Seguranca.Models
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,7 +12,7 @@
     @RenderSection("styles", false);
     <link href="@Url.Content("~/css/geralOrganizador.css")" rel="stylesheet" />
     <link href="@Url.Content("~/css/individualOrganizador.css")" rel="stylesheet" />
-    <!--<script src="~/Scripts/modernizr-2.8.3.js"></script>-->
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
     <!--MENU LATERAL-->
@@ -20,27 +21,31 @@
             <img id="logo" src="~/Imagens/Wdev_Logo.png">
         </div>
         <ul id="menuLateral">
-            <!--<li><a class="menuLateral" href="checklist.html">Checklist</a></li>
-            <li><a class="menuLateral" href="gerenciarCertificados.html">Certificados</a></li>
-            <li><a class="menuLateral" href="inscritos.html">Inscritos</a></li>
-            <li><a class="menuLateral" href="gerenciarPalestrantes.html">Palestrantes</a></li>
-            <li><a class="menuLateral" id="aDestaque" href="#">Programação</a></li>
-            <li><a class="menuLateral" href="gerenciarOrganizadores.html">Organizadores</a></li>-->
-            <li id="liProgramação" class="menuLateral" role="presentation">@Html.ActionLink("Programação", "Index", "Sessões", new { Area = "Sessao" }, null)</li>
+            <li><h2 class="menuLateral">Certificados</h2></li>
+            <li><h2 class="menuLateral">@Html.ActionLink("Inscritos", "Index", "Inscricoes", new { Area = "Inscricoes" }, null)</h2></li>
+            <li><h2 class="menuLateral">@Html.ActionLink("Programação", "Index", "Sessões", new { Area = "Sessao" }, null)</h2></li>
         </ul>
     </nav>
     <!--MENU SUPERIOR-->
     <nav id="navSuperior">
         <ul class="menu">
-            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-perfil.png" id="usuario"></a></li>
             <li>
                 <a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-config.png" id="configuracao"></a>
                 <ul>
-                    <li><a href="#">Configurações:</a></li>
-                    <li id="liEventos" class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos", new { Area = "Eventos" }, null)</li>
+                    <li><a href="#"><b>Configurações:</b></a></li>
+                    <li class="menuLateral" role="presentation">@Html.ActionLink("Editar perfil", "Edit", "Adm", new { Area = "Seguranca"}, null)</li>
+                    <li class="menuLateral" role="presentation">@Html.ActionLink("Eventos Anteriores", "Index", "Eventos", new { Area = "Eventos" }, null)</li>
+                    <li class="menuLateral" role="presentation">
+                        @{
+                            if (Html.GetAuthenticatedUser().ToString() != "")
+                            {
+                                @Html.GetAuthenticatedUser();
+                                @Html.ActionLink("Sair", "Logout", "Account")
+                            }
+                        }
+                    </li>
                 </ul>
             </li>
-            <li><a class="menuSuperior" href="#"><img class="iconeSuperior" src="~/Imagens/icone-sair.png" id="saida"></a></li>
         </ul>
     </nav>
     @RenderBody()
@@ -52,3 +57,4 @@
 
 </body>
 </html>
+

@@ -51,10 +51,12 @@ namespace W_Dev.Areas.Inscricoes.Controllers
         {
             return View(inscricaoDAL.ObterInscritosClassificadoPorUsuario());
         }
+        [Authorize(Roles = "Aluno")]
         public ActionResult Lista()
         {
             return View(eventosDAL.ObterEventosClassificadosPorNome());
         }
+        [Authorize(Roles = "Aluno")]
         public ActionResult Insert()
         {
             return View();
@@ -64,6 +66,7 @@ namespace W_Dev.Areas.Inscricoes.Controllers
         public ActionResult Insert(Inscricao inscricao)
         {
             return GravarInscricoes(inscricao);
+
         }
     }
 }
