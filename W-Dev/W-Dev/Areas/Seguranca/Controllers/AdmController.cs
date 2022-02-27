@@ -42,7 +42,6 @@ namespace W_Dev.Areas.Seguranca.Controllers
             }
         }
         // GET: Seguranca/Admin
-        [Authorize(Roles = "Aluno")]
         public ActionResult Index()
         {
             return View(GerenciadorUsuario.Users);

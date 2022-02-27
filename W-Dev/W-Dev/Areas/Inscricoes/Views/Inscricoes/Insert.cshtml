@@ -18,7 +18,7 @@
             text-align: left;
         }
     </style>
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Insert", "Inscricoes", new { area = "Inscricoes" }))
     {
         @Html.AntiForgeryToken()
         
@@ -39,9 +39,9 @@
                 @Html.LabelFor(model => model.EventoId, "EventoId", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.ValidationMessageFor(model => model.EventoId, "", new { @class = "text-danger" })
-                    <input type="submit" value="Inscrever-se" class="btn btn-info" />
+                    <!--<input type="submit" value="Inscrever-se" class="btn btn-info" />-->
                 </div>
-
+                <input type="submit" value="Inscrever-se" class="btn btn-info" />
             </div>
         </div>
     }
