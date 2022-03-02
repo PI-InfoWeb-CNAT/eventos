@@ -19,11 +19,12 @@ namespace W_Dev.Areas.Certificados.Controllers
         CheckinDAL checkinDAL = new CheckinDAL();
         EventosDAL eventosDAL = new EventosDAL();
         InscricaoDAL inscricaoDAL = new InscricaoDAL();
-        private byte[] SetLogo(HttpPostedFileBase logo)
+
+        private byte[] SetCert(HttpPostedFileBase certificado)
         {
-            var bytesLogo = new byte[logo.ContentLength];
-            logo.InputStream.Read(bytesLogo, 0, logo.ContentLength);
-            return bytesLogo;
+            var bytesCert = new byte[certificado.ContentLength];
+            certificado.InputStream.Read(bytesCert, 0, certificado.ContentLength);
+            return bytesCert;
         }
         public FileContentResult GetCert(long id)
         {
@@ -45,6 +46,19 @@ namespace W_Dev.Areas.Certificados.Controllers
             fileStream.Close();
             return File(fileStream.Name, certificado.CertMimeType, certificado.NomeArquivoCert);
         }
+        private void PopularViewBag(Certificado certificado = null)
+        {
+            if (certificado == null)
+            {
+                ViewBag.EventoId = new SelectList(eventosDAL.ObterEventosClassificadosPorNome(),
+                "EventoId", "Nome");
+            }
+            else
+            {
+                ViewBag.EventoId = new SelectList(eventosDAL.ObterEventosClassificadosPorNome(),
+               "EventoId", "Nome", certificado.EventoId);
+            }
+        }
         private ActionResult GravarCertificados(Certificado certificado, HttpPostedFileBase cert)
         {
             try
@@ -54,7 +68,7 @@ namespace W_Dev.Areas.Certificados.Controllers
                     if (cert != null)
                     {
                         certificado.CertMimeType = cert.ContentType;
-                        certificado.Cert = SetLogo(cert);
+                        certificado.Cert = SetCert(cert);
                         certificado.NomeArquivoCert = cert.FileName;
                         certificado.TamanhoArquivoCert = cert.ContentLength;
                     }

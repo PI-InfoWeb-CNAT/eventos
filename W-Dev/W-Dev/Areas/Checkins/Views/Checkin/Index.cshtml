@@ -1,0 +1,130 @@
+﻿@model IEnumerable<W_Dev.Areas.Sessao.Models.Sessão>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAluno.cshtml";
+    int hour1 = 0;
+    int hour2 = 0;
+    int minute1 = 0;
+    int minute2 = 0;
+    string Data1 = "a";
+    string Data2 = "a";
+}
+
+    <section id="conteudo">
+        <h1>Programação</h1>
+        <p> </p><br />
+        <div class="containerDia_inicorganizador">
+            <h2>1° dia (01/10)</h2>
+            <div class="containerTurno_inicorganizador">
+                <h2>Manhã</h2>
+                <br />
+                <table class="inicorganizador">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Titulo)
+                        </th>
+                        <th>
+                            <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Local)
+                        </th>
+                        <th>     </th>
+                        <th>     </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        DateTime MyDate1 = item.HoraInicial;
+                        hour1 = MyDate1.Hour;
+                        minute1 = MyDate1.Minute;
+                        Data1 = MyDate1.ToString("t");
+                        DateTime MyDate2 = item.Horafinal;
+                        hour2 = MyDate2.Hour;
+                        minute2 = MyDate2.Minute;
+                        Data2 = MyDate2.ToString("t");
+
+                        <!--int hi1 = int.Parse(DateTime.Hour);
+                        int hf1 = int.Parse(DateTime.Hour);
+                        if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                        if (hour1 >= 7 && hour2 <= 12)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titulo)
+                                </td>
+                                <td>
+                                    <p>@Html.DisplayFor(modelItem => Data1)-@Html.DisplayFor(modelItem => Data2)</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Local)
+                                </td>
+                                <td>
+                                    <input type="button" value="Save" />
+                                </td>
+                                <th>
+                                </th>
+                            </tr>
+                        }
+                    }
+                </table>
+                <h2>Tarde</h2>
+                <table class="inicorganizador">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Titulo)
+                        </th>
+                        <th>
+                            <!--Html.DisplayNameFor(model => model.HoraInicial)--> Horario
+                        </th>
+                        <!--<th>
+                            Html.DisplayNameFor(model => model.Horafinal)
+                        </th>-->
+                        <th>
+                            @Html.DisplayNameFor(model => model.Local)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        DateTime MyDate1 = item.HoraInicial;
+                        hour1 = MyDate1.Hour;
+                        Data1 = MyDate1.ToString("t");
+                        DateTime MyDate2 = item.Horafinal;
+                        hour2 = MyDate2.Hour;
+                        Data2 = MyDate2.ToString("t");
+
+                        <!--int hi1 = int.Parse(DateTime.Hour);
+                        int hf1 = int.Parse(DateTime.Hour);
+                        if (Convert.ToInt32(item.HoraInicial) >= 7 && Convert.ToInt32(item.Horafinal) <= 12)-->
+                        if (hour1 >= 12 && hour2 <= 19)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titulo)
+                                </td>
+                                <td>
+                                    <p>@Html.DisplayFor(modelItem => Data1)-@Html.DisplayFor(modelItem => Data2)</p>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Local)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Checkin", "Insert", new { id = item.SessãoId }) |
+                                </td>
+                            </tr>
+
+
+                        }
+                    }
+
+                </table>
+                <h1 class="inicorganizador">
+                </h1>
+            </div>
+        </div>
+    </section>

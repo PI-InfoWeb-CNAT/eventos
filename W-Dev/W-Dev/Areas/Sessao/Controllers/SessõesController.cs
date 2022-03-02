@@ -63,6 +63,7 @@ namespace W_Dev.Areas.Sessao.Controllers
                 return View(sessão);
             }
         }
+        [Authorize(Roles = "Organizador")]
         public ActionResult Index()
         {
             return View(context.Sessões.OrderBy(c => c.Titulo));

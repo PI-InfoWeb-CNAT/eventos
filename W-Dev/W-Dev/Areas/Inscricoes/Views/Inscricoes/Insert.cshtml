@@ -28,20 +28,19 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.InscricaoId)
     
-            <div class="form-group">
-                @Html.LabelFor(model => model.UsuarioDadosId, "UsuarioDadosId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <!--<div class="form-group">
+                Html.LabelFor(model => model.UsuarioDadosId, "UsuarioDadosId", htmlAttributes: new { class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.ValidationMessageFor(model => model.UsuarioDadosId, "", new { @class = "text-danger" })
+                    Html.ValidationMessageFor(model => model.UsuarioDadosId, "", new { class = "text-danger" })
                 </div>
-            </div>
+            </div>-->
     
             <div class="form-group">
                 @Html.LabelFor(model => model.EventoId, "EventoId", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.ValidationMessageFor(model => model.EventoId, "", new { @class = "text-danger" })
-                    <!--<input type="submit" value="Inscrever-se" class="btn btn-info" />-->
+                    <input type="submit" value="Inscrever-se" class="btn btn-info" />
                 </div>
-                <input type="submit" value="Inscrever-se" class="btn btn-info" />
             </div>
         </div>
     }

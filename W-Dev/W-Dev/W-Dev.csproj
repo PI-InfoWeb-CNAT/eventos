@@ -269,6 +269,11 @@
     <Content Include="Areas\Checkins\Views\web.config" />
     <Content Include="Areas\Certificados\Views\web.config" />
     <Content Include="Areas\Checkins\Views\Checkin\Insert.cshtml" />
+    <Content Include="Areas\Certificados\Views\Certificados\Index.cshtml" />
+    <Content Include="Areas\Certificados\Views\Certificados\Upload.cshtml" />
+    <Content Include="Areas\Certificados\Views\Certificados\Details.cshtml" />
+    <Content Include="Areas\Certificados\Views\Certificados\Present.cshtml" />
+    <Content Include="Areas\Checkins\Views\Checkin\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Imagens\editar.png" />
     <Content Include="Imagens\icone-adicionar %282%29.png" />
@@ -409,7 +414,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Certificados\Data\" />
-    <Folder Include="Areas\Certificados\Views\Certificados\" />
     <Folder Include="Areas\Certificados\Views\Shared\" />
     <Folder Include="Areas\Checkins\Data\" />
     <Folder Include="Areas\Checkins\Views\Checkins\" />

@@ -30,6 +30,19 @@ namespace W_Dev.Areas.Inscricoes.Controllers
             }
             return View(evento);
         }
+        private void PopularViewBag(Inscricao inscricao = null)
+        {
+            if (inscricao == null)
+            {
+                ViewBag.EventoId = new SelectList(eventosDAL.ObterEventosClassificadosPorNome(),
+                "EventoId", "Nome");
+            }
+            else
+            {
+                ViewBag.EventoId = new SelectList(eventosDAL.ObterEventosClassificadosPorNome(),
+               "EventoId", "Nome", inscricao.EventoId);
+            }
+        }
         private ActionResult GravarInscricoes(Inscricao inscricao)
         {
             try

@@ -64,8 +64,6 @@
                             </td>
                             <td>
                                 <input type="checkbox" value="Save" />
-                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
-                                @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
                             </td>
                             <th>
                             </th>
@@ -116,9 +114,7 @@
                                 @Html.DisplayFor(modelItem => item.Local)
                             </td>
                             <td>
-                                <input type="checkbox" value="save"/>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.SessãoId }) |
-                                @Html.ActionLink("Apagar", "Delete", new { id = item.SessãoId })
+                                <input type="checkbox" value="Save" />
                             </td>
                         </tr>
 
@@ -128,11 +124,7 @@
 
             </table>
             <h1 class="inicorganizador">
-                @Html.ActionLink("Adicionar Sessão", "Create")
             </h1>
         </div>
     </div>
 </section>
-<footer class="paginicialAluno">
-    <h4>Site Desenvolvido pela DIATINF - Diretoria Acadêmica de Gestão de Tecnológia da Informação - IFRN/CNAT</h4>
-</footer>

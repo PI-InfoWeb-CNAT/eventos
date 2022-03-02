@@ -460,7 +460,6 @@ C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\bin\pt-br\System.Web.
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\obj\Debug\W-Dev.csproj.AssemblyReference.cache
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\obj\Debug\W-Dev.csproj.CoreCompileInputs.cache
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\obj\Debug\W-Dev.csproj.CopyComplete
 C:\Users\Junior\Desktop\W-Dev2\eventos\eventos\W-Dev\W-Dev\obj\Debug\W-Dev.dll

@@ -44,6 +44,10 @@ namespace W_Dev.Areas.Checkins.Controllers
                 return View(checkin);
             }
         }
+        public ActionResult Index()
+        {
+            return View(sessoesDAL.ObterSessoesClassificadosPorTitulo());
+        }
         [Authorize(Roles = "Aluno")]
         public ActionResult Insert()
         {

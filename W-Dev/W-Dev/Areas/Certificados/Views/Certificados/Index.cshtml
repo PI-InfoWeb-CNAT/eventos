@@ -1,0 +1,53 @@
+﻿@model IEnumerable<W_Dev.Areas.Checkins.Models.Checkin>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SessãoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horafinal)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SessãoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraInicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horafinal)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CheckinId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CheckinId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CheckinId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

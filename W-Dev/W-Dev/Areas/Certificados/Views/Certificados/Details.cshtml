@@ -1,0 +1,42 @@
+﻿@model W_Dev.Areas.Inscricoes.Models.Inscricao
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Inscricao</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Dados.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Dados.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Eventos.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Eventos.Nome)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.InscricaoId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

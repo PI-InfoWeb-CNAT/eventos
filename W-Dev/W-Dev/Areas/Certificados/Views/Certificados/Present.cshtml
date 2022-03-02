@@ -1,0 +1,106 @@
+﻿@model W_Dev.Areas.Certificados.Models.Certificado
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Present</title>
+</head>
+<body>
+    <div>
+        <h4>Certificado</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Eventos.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Eventos.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SessãoId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SessãoId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Horas)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Horas)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CPF)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CertMimeType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CertMimeType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cert)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cert)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeArquivoCert)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NomeArquivoCert)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TamanhoArquivoCert)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TamanhoArquivoCert)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Texto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Texto)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Certificadoid }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
