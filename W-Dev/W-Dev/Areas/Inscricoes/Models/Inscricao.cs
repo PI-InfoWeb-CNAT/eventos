@@ -10,9 +10,11 @@ namespace W_Dev.Areas.Inscricoes.Models
     public class Inscricao
     {
         public int InscricaoId { get; set; }
+        public string UsuarioId { get; set; }
         public int UsuarioDadosId { get; set; }
         public int EventoId { get; set; }
         public Evento Eventos { get; set; }
+        public Usuario Usuarios { get; set; }
         public UsuarioDados Dados { get; set; }
     }
 }

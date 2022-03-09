@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using W_Dev.Areas.Eventos.Models;
 using W_Dev.Areas.Inscricoes.Models;
 using W_Dev.DAL;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
+using W_Dev.Infraestrutura;
 
 namespace W_Dev.Areas.Inscricoes.Controllers
 {
@@ -70,9 +73,12 @@ namespace W_Dev.Areas.Inscricoes.Controllers
             return View(eventosDAL.ObterEventosClassificadosPorNome());
         }
         [Authorize(Roles = "Aluno")]
-        public ActionResult Insert()
+        public ActionResult Insert(int eventoid)
         {
-            return View();
+            Inscricao inscricao = new Inscricao();
+            inscricao.EventoId = eventoid;
+            //inscricao.UsuarioId = IdentityHelpers.GetUser() ;
+            return View(inscricao);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

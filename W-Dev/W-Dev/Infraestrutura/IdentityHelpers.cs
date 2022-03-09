@@ -19,5 +19,8 @@ namespace W_Dev.Infraestrutura
         {
             return new MvcHtmlString(HttpContext.Current.User.Identity.Name);
         }
+        /*public static string GetUser()
+        {
+            return HttpContext.Current.User.Identity.Name;
+        */}
     }
-}

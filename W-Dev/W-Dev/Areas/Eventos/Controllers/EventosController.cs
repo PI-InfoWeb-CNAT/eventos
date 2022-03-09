@@ -107,7 +107,7 @@ namespace W_Dev.Areas.Eventos.Controllers
                 return View(evento);
             }
         }
-        [Authorize(Roles = "Organizador")]
+        //[Authorize(Roles = "Organizador")]
         public ActionResult Index()
         {
             return View(eventosDAL.ObterEventosClassificadosPorNome());

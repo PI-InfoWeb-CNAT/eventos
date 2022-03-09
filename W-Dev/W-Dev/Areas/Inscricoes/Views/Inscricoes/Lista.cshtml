@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Lista";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/LayoutAluno.cshtml";
 }
 
 <section id="conteudo">
@@ -62,7 +62,7 @@
                     @Html.DisplayFor(modelItem => Date2)
                 </td>
                 <td>
-                    @Html.ActionLink("Inscrever", "Insert", new { id = item.EventoId }) |
+                    @Html.ActionLink("Inscrever", "Insert", new { eventoid = item.EventoId }) |
                 </td>
             </tr>
         }
